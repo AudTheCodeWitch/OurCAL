@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x: MyString
+  'y': MyString
+  color: MyString
+  block: one
+
+two:
+  x: MyString
+  'y': MyString
+  color: MyString
+  block: two
