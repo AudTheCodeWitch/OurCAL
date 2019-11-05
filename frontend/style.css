@@ -1,0 +1,67 @@
+body {
+  background-color: thistle;
+}
+
+header {
+  background-color: lavender;
+}
+
+.block-container {
+  background-color: lavender;
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template: [header-left] 'h2 h2 h2 h2 h2' 10% [header-right]
+  [main-left] 'can can can form form' auto [main-right]
+  [footer-left] 'color color color form form' 10% [footer-right];
+}
+
+  h3 {
+    color: purple;
+    grid-area: h2;
+  }
+
+  .block {
+    background-color: white;
+    grid-area: can;
+    width: 100%;
+    height: 100%;
+  }
+
+  .block-details {
+    background-color: antiquewhite;
+    grid-area: form;
+  }
+
+  .block-colors {
+    background-color: burlywood;
+    grid-area: color;
+  }
+
+
+
+.card-container {
+  background-color: lavender;
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template: [header-left] 'h2' 10% [header-right]
+  [main-left] 'color' 10% [main-right]
+  [main-left] 'cards' auto [main-right]
+  [footer-left] 'load' 10% [footer-right];
+}
+
+.cards {
+  background-color: khaki;
+  grid-area: cards
+}
+
+.load {
+  background-color: linen;
+  grid-area: load;
+}
+
+footer {
+  background-color: lavender;
+}
+
