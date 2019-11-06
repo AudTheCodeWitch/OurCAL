@@ -10,10 +10,10 @@ header {
   background-color: lavender;
   display: grid;
   width: 100%;
-  height: 500px;
-  grid-template: [header-left] 'h2 h2 h2 h2 h2' 10% [header-right]
-  [main-left] 'can can can form form' auto [main-right]
-  [footer-left] 'color color color form form' 10% [footer-right];
+  height: 100%;
+  grid-template: [header-left] 'h2 h2 h2 h2 h2' 1fr [header-right]
+  [main-left] 'block block block form form' auto [main-right]
+  [footer-left] 'color color color form form' 1fr [footer-right];
 }
 
   h3 {
@@ -21,11 +21,24 @@ header {
     grid-area: h2;
   }
 
-  .block {
+  #block {
+    grid-area: block;
+    display: table;
+    border-spacing: 1px;
+    background-color: black;
+    height: auto;
+    width: 100%
+  }
+
+  .row {
+    display: table-row;
+  }
+
+  .pixel {
+    display: table-cell;
     background-color: white;
-    grid-area: can;
-    width: 100%;
-    height: 100%;
+    width: 1em;
+    height: 1em;
   }
 
   .block-details {
