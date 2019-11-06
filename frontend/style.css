@@ -6,14 +6,19 @@ header {
   background-color: lavender;
 }
 
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
 .block-container {
   background-color: lavender;
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template: [header-left] 'h2 h2 h2 h2 h2' 2fr [header-right]
+  grid-template: [header-left] 'h2 h2 h2 h2 h2' 1fr [header-right]
   [main-left] 'block block block form form' auto [main-right]
-  [footer-left] 'color color color color color' 1fr [footer-right];
+  [footer-left] 'color color pen form form ' 1fr [footer-right];
 }
 
   h3 {
@@ -62,19 +67,25 @@ header {
   }
 
   .color {
-
     text-align:center;
+  }
+
+  #pen {
+    background-color: burlywood;
+    grid-area: pen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 .card-container {
   background-color: lavender;
   display: grid;
   width: 100%;
-  height: 500px;
-  grid-template: [header-left] 'h2' 10% [header-right]
-  [main-left] 'color' 10% [main-right]
+  height: 100%;
+  grid-template: [header-left] 'h2' 1fr [header-right]
   [main-left] 'cards' auto [main-right]
-  [footer-left] 'load' 10% [footer-right];
+  [footer-left] 'load' 1fr [footer-right];
 }
 
 .cards {
