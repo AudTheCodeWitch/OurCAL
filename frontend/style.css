@@ -11,9 +11,9 @@ header {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template: [header-left] 'h2 h2 h2 h2 h2' 1fr [header-right]
+  grid-template: [header-left] 'h2 h2 h2 h2 h2' 2fr [header-right]
   [main-left] 'block block block form form' auto [main-right]
-  [footer-left] 'color color color form form' 2fr [footer-right];
+  [footer-left] 'color color color color color' 1fr [footer-right];
 }
 
   h3 {
@@ -54,12 +54,17 @@ header {
     grid-area: form;
   }
 
-  .block-colors {
+  #palette {
     background-color: burlywood;
     grid-area: color;
+    display: flex;
+    justify-content: space-evenly;
   }
 
+  .color {
 
+    text-align:center;
+  }
 
 .card-container {
   background-color: lavender;

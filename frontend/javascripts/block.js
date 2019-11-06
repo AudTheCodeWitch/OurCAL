@@ -20,19 +20,17 @@ const createBlock = function () {
 };
 
 const createPalette = function() {
-    const palettes = document.getElementsByClassName('block-colors')
-    for (let palette of palettes) {
-        for (let i = 0; i < 5; i++) {
-            const color = document.createElement('div');
-            color.className = 'color';
-            color.id = `color-${i+1}`;
-            let text = document.createTextNode(`Color ${i+1}`);
-            color.appendChild(text);
-            palette.appendChild(color)
-        }
-
-        console.log(palette)
+    const palette = document.getElementById('palette');
+    for (let i = 0; i < 5; i++) {
+        const color = document.createElement('button');
+        color.className = 'color jscolor {valueElement:null}';
+        color.id = `color-${i+1}`;
+        let text = document.createTextNode(`Color ${i+1}`);
+        color.appendChild(text);
+        palette.appendChild(color)
     }
+
+    console.log(palette)
 };
 
 
