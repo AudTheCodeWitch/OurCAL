@@ -22,18 +22,23 @@ const createBlock = function () {
 const createPalette = function() {
     const palette = document.getElementById('palette');
     for (let i = 0; i < 5; i++) {
-        const color = document.createElement('button');
-        color.className = 'color jscolor {valueElement:null}';
-        color.id = `color-${i+1}`;
-        let text = document.createTextNode(`Color ${i+1}`);
-        color.appendChild(text);
-        palette.appendChild(color)
+        const li = document.createElement('li');
+        let text;
+        if (i !== 0) {
+            text = document.createTextNode(`Color ${i + 1}:`);
+        } else {
+            text = document.createTextNode(`Background Color:`);
+        }
+        const colorPicker = document.createElement('button');
+        colorPicker.className = `color jscolor`;
+        colorPicker.id = `color-${i+1}`;
+        colorPicker.style.backgroundColor = 'white';
+        li.appendChild(text);
+        li.appendChild(document.createElement('br'));
+        li.append((colorPicker));
+        palette.appendChild(li);
     }
-
-    console.log(palette)
 };
-
-
 
 const setPixelColor = function(pixel) {
     if (pixel.style.backgroundColor === 'white') {
@@ -43,7 +48,5 @@ const setPixelColor = function(pixel) {
     }
 };
 
-
-
 createBlock();
-createPalette()
+createPalette();
