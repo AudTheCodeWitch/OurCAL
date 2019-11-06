@@ -13,7 +13,7 @@ header {
   height: 100%;
   grid-template: [header-left] 'h2 h2 h2 h2 h2' 1fr [header-right]
   [main-left] 'block block block form form' auto [main-right]
-  [footer-left] 'color color color form form' 1fr [footer-right];
+  [footer-left] 'color color color form form' 2fr [footer-right];
 }
 
   h3 {
@@ -27,18 +27,26 @@ header {
     border-spacing: 1px;
     background-color: black;
     height: auto;
-    width: 100%
+    width: 100%;
+    grid-template: repeat(25, 1fr) / repeat(25, 1fr);
   }
 
-  .row {
-    display: table-row;
-  }
+.row {
+  display: table-row;
+}
 
   .pixel {
     display: table-cell;
     background-color: white;
+    font-size: 1em;
     width: 1em;
-    height: 1em;
+
+  }
+
+  .pixel:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
   }
 
   .block-details {
