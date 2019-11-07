@@ -1,4 +1,5 @@
 const block = document.getElementById('block');
+let pen;
 const createBlock = function () {
     let noRows;
     for (noRows = 1; noRows < 26; noRows++) {
@@ -45,6 +46,7 @@ const createPalette = function() {
         const radio = document.createElement('input');
         radio.setAttribute('type', 'radio');
         radio.setAttribute('name', 'pen');
+        radio.className='pens';
         radio.id=`pen-${i+1}`;
         let text = document.createTextNode(`Color ${i + 1}:`);
         li.appendChild(text);
@@ -53,15 +55,6 @@ const createPalette = function() {
         li.appendChild(document.createElement('br'));
         li.appendChild(radio);
         palette.appendChild(li);
-    }
-};
-
-const setPixelColor = function(pixel) {
-    let pen = document.getElementById('bg').style;
-    if (pixel.style.backgroundColor === pen.backgroundColor) {
-        pixel.style.backgroundColor = 'black'
-    } else {
-        pixel.style.backgroundColor = pen.backgroundColor
     }
 };
 
@@ -93,13 +86,11 @@ const setBlockColors = function() {
                 for (const mutation of mutationsList) {
                     // If the classList contains the className we want, go to the cart page
                     if (!mutation.target.classList.contains(className)) {
-                        console.log(mutation.target.id + mutation.target.style.backgroundColor)
                     //    iterate through pixels and change colors
                         const pixels = document.getElementsByClassName('pixel')
                         for(let i = 0; i < pixels.length; i++) {
                             const p = pixels[i];
                             if (p.classList.contains(`${mutation.target.id}`)) {
-                                console.log(mutation.target.id);
                                 p.style.backgroundColor = mutation.target.style.backgroundColor
                             }
                         }
@@ -116,8 +107,33 @@ const setBlockColors = function() {
     }
 };
 
+const setPen = function() {
+    for(let i = 2; i < 6; i++) {
+        const p = document.getElementById(`pen-${i}`);
+        p.addEventListener("click", function() {
+            pen = p
+        });
+    }
+};
+
+const setPixelColor = function(pixel) {
+    if (pen !== undefined) {
+        let penColor = pen.parentElement.children[1];
+        let background = document.getElementById(`bg`)
+        if (pixel.style.backgroundColor !== penColor.style.backgroundColor) {
+            pixel.className = `pixel ${penColor.id}`;
+            pixel.style.backgroundColor = penColor.style.backgroundColor
+        } else {
+            pixel.style.backgroundColor = background.style.backgroundColor
+            pixel.className = 'pixel bg'
+        }
+    } else {
+        alert('Please select a color')
+    }
+};
 
 
 createBlock();
 createPalette();
 setBlockColors();
+setPen();
