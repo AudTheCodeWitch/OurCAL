@@ -75,7 +75,7 @@ const setBlockColors = function() {
             targetNode = document.getElementById(`c${i}`);
         }
         // The class we'll watch for
-        var className = 'jscolor-active';
+        const className = 'jscolor-active';
 
         // If the targetNode exists on our page
         if (targetNode) {
@@ -89,17 +89,26 @@ const setBlockColors = function() {
             };
 
             // When a mutation is observed
-            var callback = function (mutationsList) {
-                for (var mutation of mutationsList) {
+            const callback = function (mutationsList) {
+                for (const mutation of mutationsList) {
                     // If the classList contains the className we want, go to the cart page
                     if (!mutation.target.classList.contains(className)) {
-                        console.log(mutation.target.style.backgroundColor)
+                        console.log(mutation.target.id + mutation.target.style.backgroundColor)
+                    //    iterate through pixels and change colors
+                        const pixels = document.getElementsByClassName('pixel')
+                        for(let i = 0; i < pixels.length; i++) {
+                            const p = pixels[i];
+                            if (p.classList.contains(`${mutation.target.id}`)) {
+                                console.log(mutation.target.id);
+                                p.style.backgroundColor = mutation.target.style.backgroundColor
+                            }
+                        }
                     }
                 }
             };
 
             // Create an new observer
-            var observer = new MutationObserver(callback);
+            const observer = new MutationObserver(callback);
 
             // Start observing
             observer.observe(targetNode, config);
