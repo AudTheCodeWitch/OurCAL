@@ -33,21 +33,25 @@ const createColorButton = function(i) {
 
 const createPalette = function() {
     const palette = document.getElementById('palette');
-    for (let i = 0; i < 5; i++) {
+    const bgLi = document.createElement('li');
+    const bgText = document.createTextNode(`Background Color:`);
+    bgLi.appendChild(bgText);
+    bgLi.appendChild(document.createElement('br'));
+    bgLi.appendChild(createColorButton());
+    palette.appendChild(bgLi);
+
+    for (let i = 1; i < 5; i++) {
         const li = document.createElement('li');
-        let text;
-        if (i !== 0) {
-            text = document.createTextNode(`Color ${i + 1}:`);
-        } else {
-            text = document.createTextNode(`Background Color:`);
-        }
-        const colorPicker = document.createElement('button');
-        colorPicker.className = `color jscolor`;
-        colorPicker.id = `color-${i+1}`;
-        colorPicker.style.backgroundColor = 'white';
+        const radio = document.createElement('input');
+        radio.setAttribute('type', 'radio');
+        radio.setAttribute('name', 'pen');
+        radio.id=`pen-${i+1}`;
+        let text = document.createTextNode(`Color ${i + 1}:`);
         li.appendChild(text);
         li.appendChild(document.createElement('br'));
-        li.append((colorPicker));
+        li.appendChild(createColorButton(i));
+        li.appendChild(document.createElement('br'));
+        li.appendChild(radio);
         palette.appendChild(li);
     }
 };
