@@ -19,6 +19,18 @@ const createBlock = function () {
     }
 };
 
+const createColorButton = function(i) {
+    const colorPicker = document.createElement('button');
+    colorPicker.className = `color jscolor`;
+    if (i) {
+        colorPicker.id = `c${i + 1}`;
+    } else {
+        colorPicker.id = `bg`
+    }
+    colorPicker.style.backgroundColor = 'white';
+    return colorPicker
+};
+
 const createPalette = function() {
     const palette = document.getElementById('palette');
     for (let i = 0; i < 5; i++) {
