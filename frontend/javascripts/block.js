@@ -65,45 +65,50 @@ const setPixelColor = function(pixel) {
     }
 };
 
-const setBackgroundColor = function() {
+const setBlockColors = function() {
+    for (let i = 1; i < 6; i++) {
+        // Select the node to observe
+        let targetNode;
+        if(i === 1) {
+            targetNode = document.getElementById(`bg`)
+        } else {
+            targetNode = document.getElementById(`c${i}`);
+        }
+        // The class we'll watch for
+        var className = 'jscolor-active';
 
-    // Select the node to observe
-    var targetNode = document.getElementById('bg');
-    // The class we'll watch for
-    var className = 'jscolor-active';
+        // If the targetNode exists on our page
+        if (targetNode) {
 
-    // If the targetNode exists on our page
-    if(targetNode){
+            // Observe attributes, specifically the class attribute
+            // We don't care about descendant nodes
+            var config = {
+                attributes: true,
+                attributeFilter: ['class'],
+                subtree: false
+            };
 
-        // Observe attributes, specifically the class attribute
-        // We don't care about descendant nodes
-        var config = {
-            attributes: true,
-            attributeFilter: ['class'],
-            subtree: false
-        };
-
-        // When a mutation is observed
-        var callback = function(mutationsList) {
-            for(var mutation of mutationsList) {
-                // If the classList contains the className we want, go to the cart page
-                if(!mutation.target.classList.contains(className)){
-                    console.log(mutation.target.style.backgroundColor)
+            // When a mutation is observed
+            var callback = function (mutationsList) {
+                for (var mutation of mutationsList) {
+                    // If the classList contains the className we want, go to the cart page
+                    if (!mutation.target.classList.contains(className)) {
+                        console.log(mutation.target.style.backgroundColor)
+                    }
                 }
-            }
-        };
+            };
 
-        // Create an new observer
-        var observer = new MutationObserver(callback);
+            // Create an new observer
+            var observer = new MutationObserver(callback);
 
-        // Start observing
-        observer.observe(targetNode, config);
+            // Start observing
+            observer.observe(targetNode, config);
+        }
     }
-
 };
 
 
 
 createBlock();
 createPalette();
-setBackgroundColor();
+setBlockColors();
