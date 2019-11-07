@@ -8,7 +8,7 @@ const createBlock = function () {
         let noCols;
         for (noCols = 1; noCols < 26; noCols++) {
             const pixel = document.createElement('div');
-            pixel.className = 'pixel';
+            pixel.className = 'pixel bg';
             pixel.id = `pixel-${noCols}`;
             pixel.addEventListener("click", function() {
                 setPixelColor(pixel)
