@@ -2,15 +2,15 @@ class BlocksController < ApplicationController
 
   def index
     blocks = Block.all
-    render json: blocks, include: [:pixels]
+    render json: BlockSerializer.new(blocks)
   end
 
   def show
     block = Block.find_by(id: params[:id])
     if block
-      render json: block, include: [:user, :difficulty, :pixels]
+      render json: BlockSerializer.new(block)
     else
-      render json: { message: 'No block found with that id' }
+      render json: { message: 'No blockTemplate found with that id' }
     end
   end
 
