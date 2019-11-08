@@ -132,8 +132,11 @@ const setPixelColor = function(pixel) {
     }
 };
 
-
-createBlock();
 createPalette();
-setBlockColors();
-setPen();
+
+document.addEventListener('DOMContentLoaded', () => {
+    createBlock();
+    setBlockColors();
+    setPen();
+    console.log('content loaded')
+});
