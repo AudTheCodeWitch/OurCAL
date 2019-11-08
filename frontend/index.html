@@ -4,8 +4,6 @@
         <meta charset="UTF-8">
         <title>OurCAL</title>
         <link rel="stylesheet" href="style.css">
-
-
     </head>
     <body>
         <header>
@@ -14,20 +12,30 @@
         </header>
 
         <section class = 'block-container'>
-            <div class = 'block-details'>
+            <div class = 'block-header'>
                 <h3>Create A Block</h3>
-                <p>
-                    Instructions and stuff. Let's see if it wraps properly. I certainly hope so.
-                    Still testing blah blah blah
-                </p>
+                <ol style="text-align: left">
+                    <li>Use the color pickers to set your colors. You may use up to 5 colors in your block</li>
+                    <li>Select a color radio button to set your active color.</li>
+                    <li>Click on a box to fill it in with your chosen color. Click it again to revert to the background color</li>
+                    <li>Fill in the block details form and submit your creation!</li>
+                </ol>
+            </div>
+            <div class = 'block-details'>
                 <form class="block-form">
-                    <h4>Block Details</h4>
+                    <h3>Block Details</h3>
                     Block name:<br>
                     <input type="text" name="blockName"><br>
+                    <input type="radio" name="difficulty" value="Beginner">
+                    Beginner<br>
+                    <input type="radio" name="difficulty" value="Intermediate">
+                    Intermediate<br>
+                    <input type="radio" name="difficulty" value="Advanced">
+                    Advanced<br><br>
                     Username:<br>
                     <input type="text" name="username"><br>
                     Email:<br>
-                    <input type="email" name="email"><br>
+                    <input type="email" name="email"><br><br>
                     <input id='create' type="submit" value="Create Block">
                 </form>
             </div>
