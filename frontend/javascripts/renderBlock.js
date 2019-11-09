@@ -15,9 +15,13 @@ const createBlockCard = function(block) {
     const container = document.querySelector('.cards');
     const div = document.createElement('div');
     div.className = 'card';
-    div.setAttribute('data-id' , block.id);
+    // div.id = block.id;
     container.appendChild(div);
 
+    // delete button
+    const del = document.createElement('button');
+    del.className=`far fa-times-circle`;
+    div.appendChild(del);
     // <h6>Block Name</h6>
     const h = document.createElement('h4');
     const name = document.createTextNode(block.attributes.name);
@@ -36,14 +40,26 @@ const createBlockCard = function(block) {
     const user = document.createTextNode(`Designer: ${block.attributes.user.username}`);
     li.appendChild(user);
     ul.appendChild(li);
-
     div.appendChild(ul);
 
-    // <block div>
-    const bl = document.createElement('div');
-    div.id = `${block.id}-${block.name}`;
-    div.appendChild(bl);
+    div.id = `${block.id}-${block.attributes.name}`;
 
-    // delete button
+    // Add event listeners
+    del.addEventListener("mouseover", function (e) {
+        del.style.color = 'red';
+        del.style.cursor = 'pointer';
+    });
+
+    del.addEventListener("mouseout", function (e) {
+        del.style.color = 'black';
+        del.style.cursor = 'auto';
+    });
+
+    del.addEventListener("click", function (e) {
+        const blockId = e.target.parentElement.id.split('-')[0];
+        deleteBlock(blockId)
+    });
+
+
 };
 renderBlocks();
