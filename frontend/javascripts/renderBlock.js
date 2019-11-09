@@ -28,8 +28,15 @@ const createBlockCard = function(block) {
     h.appendChild(name);
     div.appendChild(h);
 
+    // <block div>
+    const bl = document.createElement('div');
+    bl.className='block';
+    createBlankBlock(bl);
+    div.appendChild(bl);
+
     // <ul>Block details
     const ul = document.createElement('ul');
+
     // <li>difficulty
     let li = document.createElement('li');
     const diff = document.createTextNode(`${block.attributes.difficulty.rating}`);
