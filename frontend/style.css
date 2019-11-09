@@ -104,21 +104,34 @@ ul {
   height: 100%;
   grid-template: [header-left] 'h2' 1fr [header-right]
   [main-left] 'cards' auto [main-right]
-  [footer-left] 'load' 1fr [footer-right];
 }
 
 .cards {
   background-color: khaki;
   grid-area: cards;
+  padding: 10px 0 0 10px;
 }
 
 .card {
   background-color: aliceblue;
-  display: inline-block;
-  width: 21%;
-  margin-left: 2%;
-  margin-right: 2%;
+  display: block;
+  width: 23%;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
   height: auto;
+  border-radius: 4px;
+}
+
+.card ul {
+  text-align: left;
+  padding-left: 0;
+  margin: 5px;
+}
+
+.card h4 {
+  text-align: center;
+  margin-top: 5px
 }
 
 .load {
