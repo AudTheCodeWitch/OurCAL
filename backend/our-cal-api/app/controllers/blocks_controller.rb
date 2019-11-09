@@ -21,7 +21,12 @@ class BlocksController < ApplicationController
   end
 
   def destroy
-
+    block = Block.find(params[:id])
+    if block.destroy
+      render json: BlockSerializer.new(block)
+    else
+      render json: { error: block.errors.full_messages }
+    end
   end
 
   private
