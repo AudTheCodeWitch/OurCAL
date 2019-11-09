@@ -1,6 +1,6 @@
 const blockTemplate = document.getElementById('block');
 let pen;
-const createBlock = function () {
+const createBlankBlock = function () {
     let noRows;
     for (noRows = 1; noRows < 26; noRows++) {
         const row = document.createElement('div');
@@ -136,7 +136,7 @@ const setPixelColor = function(pixel) {
 createPalette();
 
 document.addEventListener('DOMContentLoaded', () => {
-    createBlock();
+    createBlankBlock();
     setBlockColors();
     setPen();
     console.log('content loaded')
