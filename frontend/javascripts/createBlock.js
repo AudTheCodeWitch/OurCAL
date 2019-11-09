@@ -51,10 +51,9 @@ form.addEventListener('submit', function (e) {
                 form.reset();
                 createBlankBlock();
                 renderBlocks();
-                // createBlockCard(object)
             })
             .catch(function (error) {
-                alert("Yarn Barf!");
+                alert(`Yarn Barf! Error: ${error.message}`);
                 console.log(error.message)
             })
     }
