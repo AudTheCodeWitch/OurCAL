@@ -11,7 +11,7 @@ const renderBlocks = function() {
         })
 };
 
-const createBlockCard = function(block, object) {
+const createBlockCard = function(block) {
     const container = document.querySelector('.cards');
     const div = document.createElement('div');
     div.className = 'card';
@@ -19,7 +19,7 @@ const createBlockCard = function(block, object) {
     container.appendChild(div);
 
     // <h6>Block Name</h6>
-    const h = document.createElement('h6');
+    const h = document.createElement('h4');
     const name = document.createTextNode(block.attributes.name);
     h.appendChild(name);
     div.appendChild(h);
@@ -28,7 +28,7 @@ const createBlockCard = function(block, object) {
     const ul = document.createElement('ul');
     // <li>difficulty
     let li = document.createElement('li');
-    const diff = document.createTextNode(`Difficulty: ${block.attributes.difficulty.rating}`);
+    const diff = document.createTextNode(`${block.attributes.difficulty.rating}`);
     li.appendChild(diff);
     ul.appendChild(li);
     // <li>username
