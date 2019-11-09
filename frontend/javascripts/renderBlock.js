@@ -5,6 +5,7 @@ const renderBlocks = function() {
         })
         .then(function(object) {
             for (const block of object.data) {
+                console.log(block);
                 createBlockCard(block, object)
             }
         })
@@ -22,6 +23,21 @@ const createBlockCard = function(block, object) {
     const name = document.createTextNode(block.attributes.name);
     h.appendChild(name);
     div.appendChild(h);
+
+    // <ul>Block details
+    const ul = document.createElement('ul');
+    // <li>difficulty
+    let li = document.createElement('li');
+    const diff = document.createTextNode(`Difficulty: ${block.attributes.difficulty.rating}`);
+    li.appendChild(diff);
+    ul.appendChild(li);
+    // <li>username
+    li = document.createElement('li');
+    const user = document.createTextNode(`Designer: ${block.attributes.user.username}`);
+    li.appendChild(user);
+    ul.appendChild(li);
+
+    div.appendChild(ul);
 
     // <block div>
     const bl = document.createElement('div');
