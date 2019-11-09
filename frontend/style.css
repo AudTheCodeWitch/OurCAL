@@ -31,7 +31,7 @@ ul {
   background-color: burlywood;
 }
 
-  #block {
+  .block {
     grid-area: block;
     display: table;
     border-spacing: 1px;
@@ -131,7 +131,7 @@ ul {
 
 .card h4 {
   text-align: center;
-  margin-top: 5px
+  margin-top: 5px;
 }
 
 .load {
