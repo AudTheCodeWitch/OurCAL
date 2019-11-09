@@ -47,6 +47,9 @@ form.addEventListener('submit', function (e) {
             })
             .then(function(object) {
                 console.log(object);
+                blockTemplate.innerHTML = '';
+                form.reset();
+                createBlankBlock()
                 // createBlockCard(object)
             })
             .catch(function (error) {
