@@ -15,8 +15,17 @@ class BlocksController < ApplicationController
   end
 
   def create
-    block = Block.new
-    user = User.find_or_create_by(user_params)
+    user = User.find_or_create_by(email: user_params[:email])
+    difficulty = Difficulty.find_by(rating: params[:difficulty])
+    block = user.blocks.build(block_params)
+    difficulty.blocks << block
+
+    if block.save
+      render json: BlockSerializer.new(block)
+    else
+      render json: { error: block.errors.full_messages }
+    end
+
 
   end
 
