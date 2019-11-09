@@ -15,7 +15,7 @@ class BlocksController < ApplicationController
   end
 
   def create
-    user = User.find_or_create_by(email: user_params[:email])
+    user = User.find_or_create_by(email: user_params[:email], username: user_params[:username])
     difficulty = Difficulty.find_by(rating: params[:difficulty])
     block = user.blocks.build(block_params)
     difficulty.blocks << block
