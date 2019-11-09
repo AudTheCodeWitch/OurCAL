@@ -123,6 +123,14 @@ ul {
   border-radius: 4px;
 }
 
+.fa-times-circle {
+  position: relative;
+  padding-top: 5px;
+  background-color: inherit;
+  border: none;
+  z-index: 1
+}
+
 .card ul {
   text-align: left;
   padding-left: 0;
@@ -130,6 +138,8 @@ ul {
 }
 
 .card h4 {
+  position:relative;
+  top: -22px;
   text-align: center;
   margin-top: 5px;
 }
