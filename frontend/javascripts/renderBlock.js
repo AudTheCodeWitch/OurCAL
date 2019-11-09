@@ -1,3 +1,10 @@
+const colorPixels = function(blank, pixels) {
+    for (let p of pixels) {
+        let box = document.getElementById(`${blank.id}-${p.x},${p.y}`);
+        box.style.backgroundColor = p.color;
+    }
+};
+
 const renderBlocks = function() {
     fetch('http://localhost:3000/api/blocks')
         .then(function (response) {
@@ -15,7 +22,6 @@ const createBlockCard = function(block) {
     const container = document.querySelector('.cards');
     const div = document.createElement('div');
     div.className = 'card';
-    // div.id = block.id;
     container.appendChild(div);
 
     // delete button
@@ -31,8 +37,11 @@ const createBlockCard = function(block) {
     // <block div>
     const bl = document.createElement('div');
     bl.className='block';
+    bl.id = block.attributes.name;
     createBlankBlock(bl);
+    let pixels = block.attributes.pixels;
     div.appendChild(bl);
+    colorPixels(bl, pixels);
 
     // <ul>Block details
     const ul = document.createElement('ul');
