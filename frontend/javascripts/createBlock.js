@@ -9,20 +9,6 @@ const getDifficulty = function() {
     return '';
 };
 
-const createPixels = function(pixels) {
-    let pixelArray = [];
-    for(let p of pixels) {
-        let x = p.parentElement.id.split('-')[1];
-        let y = p.id.split('-')[1];
-        let color = p.style.backgroundColor;
-        let color_variable = p.classList[1];
-        p = new Pixel(x, y, color, color_variable);
-        pixelArray.push(p);
-    }
-    return pixelArray
-};
-
-
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     let name = form.querySelector('input[name]').value;
@@ -39,10 +25,10 @@ form.addEventListener('submit', function (e) {
     } else if (email === '') {
         alert('Email must not be blank!')
     } else {
+        let block = new Block(name, pixels, difficulty);
         let blockData = {
-            block: new Block(name),
+            block,
             difficulty: difficulty,
-            pixels: createPixels(pixels),
             user: new User(username, email)
         };
         console.log(blockData);
@@ -61,7 +47,7 @@ form.addEventListener('submit', function (e) {
             })
             .then(function(object) {
                 console.log(object);
-                createBlockCard(object)
+                // createBlockCard(object)
             })
             .catch(function (error) {
                 alert("Yarn Barf!");
