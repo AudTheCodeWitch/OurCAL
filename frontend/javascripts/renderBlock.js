@@ -63,8 +63,8 @@ const createBlockCard = function(block) {
     });
 
     del.addEventListener("click", function (e) {
-        const blockId = e.target.parentElement.id.split('-')[0];
-        deleteBlock(blockId)
+        const block = e.target.parentElement.id;
+        deleteBlock(block)
     });
 
 
