@@ -1,4 +1,5 @@
 const blockTemplate = document.getElementsByClassName('block')[0];
+blockTemplate.id = 'Template';
 let pen;
 const createBlankBlock = function (location) {
     let noRows;
@@ -10,7 +11,7 @@ const createBlankBlock = function (location) {
         for (noCols = 1; noCols < 26; noCols++) {
             const pixel = document.createElement('div');
             pixel.className = 'pixel bg';
-            pixel.id = `pixel-${noCols}`;
+            pixel.id = `${location.id}-${noCols},${26-noRows}`;
             pixel.style.backgroundColor = 'rgb(255, 255, 255)';
             pixel.addEventListener("click", function() {
                 setPixelColor(pixel)
