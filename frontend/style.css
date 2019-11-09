@@ -109,7 +109,16 @@ ul {
 
 .cards {
   background-color: khaki;
-  grid-area: cards
+  grid-area: cards;
+}
+
+.card {
+  background-color: aliceblue;
+  display: inline-block;
+  width: 21%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: auto;
 }
 
 .load {
