@@ -1,6 +1,6 @@
-const blockTemplate = document.getElementById('block');
+const blockTemplate = document.getElementsByClassName('block')[0];
 let pen;
-const createBlankBlock = function () {
+const createBlankBlock = function (location) {
     let noRows;
     for (noRows = 1; noRows < 26; noRows++) {
         const row = document.createElement('div');
@@ -17,7 +17,7 @@ const createBlankBlock = function () {
             });
             row.appendChild(pixel);
         }
-        blockTemplate.appendChild(row)
+        location.appendChild(row)
     }
 };
 
@@ -136,7 +136,7 @@ const setPixelColor = function(pixel) {
 createPalette();
 
 document.addEventListener('DOMContentLoaded', () => {
-    createBlankBlock();
+    createBlankBlock(blockTemplate);
     setBlockColors();
     setPen();
     console.log('content loaded')
