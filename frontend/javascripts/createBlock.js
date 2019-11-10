@@ -1,7 +1,8 @@
 const form = document.querySelector('.block-form');
 
 const radioButtons = document.getElementsByName('difficulty');
-const pixels = document.getElementsByClassName('pixel');
+const pixels = blockTemplate.getElementsByClassName('pixel');
+
 const getDifficulty = function() {
     for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) return radioButtons[i].value;
@@ -31,7 +32,6 @@ form.addEventListener('submit', function (e) {
             difficulty: difficulty,
             user: new User(username, email)
         };
-        console.log(blockData);
         let configObj = {
             method: 'POST',
             headers: {
@@ -47,10 +47,9 @@ form.addEventListener('submit', function (e) {
             })
             .then(function(object) {
                 console.log(object);
-                blockTemplate.innerHTML = '';
+                createBlockCard(object.data);
                 form.reset();
-                createBlankBlock();
-                renderBlocks();
+                resetTemplate(blockTemplate);
             })
             .catch(function (error) {
                 alert(`Yarn Barf! Error: ${error.message}`);

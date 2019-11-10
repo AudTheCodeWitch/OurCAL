@@ -1,5 +1,4 @@
-const blockTemplate = document.getElementsByClassName('block')[0];
-blockTemplate.id = 'Template';
+const blockTemplate = document.getElementById('Template');
 let pen;
 const createBlankBlock = function (location) {
     let noRows;
@@ -19,6 +18,14 @@ const createBlankBlock = function (location) {
             row.appendChild(pixel);
         }
         location.appendChild(row)
+    }
+};
+
+const resetTemplate = function(template) {
+    let pixels = template.getElementsByClassName('pixel');
+    for(const p of pixels) {
+        p.style.backgroundColor = 'rgb(255, 255, 255)';
+        p.className = 'pixel bg'
     }
 };
 
