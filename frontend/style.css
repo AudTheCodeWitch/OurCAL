@@ -1,34 +1,46 @@
 body {
-  background-color: thistle;
+  background-color: #ded5d7;
+  color: #e5d6cb;
 }
 
 header {
-  background-color: lavender;
+  background-color: bd9896;
 }
 
 ul {
   list-style-type: none;
   text-align: center;
+  padding-left: 0;
+  margin-left: 10px;
 }
 
 .block-container {
-  background-color: lavender;
+  background-color: #444755;
   display: grid;
   width: 100%;
   height: auto;
-  grid-template: [header-left] 'head head head head head' auto [header-right]
-      [main-left] 'block block block block form' auto [main-right]
-  [footer-left] 'color color color color color' auto [footer-right];
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "head head" "block form" "color color";
+  /*grid-template: [header-left] 'head head head head head' auto [header-right]*/
+  /*    [main-left] 'block block block block form' auto [main-right]*/
+  /*[footer-left] 'color color color color color' auto [footer-right];*/
 }
 
-  h3 {
-    color: purple;
-    grid-area: h2;
-  }
+h1 {
+  color: #4d574e;
+}
+h2,
+h4,
+h5,
+h6 {
+  margin-left: 10px;
+  color: #ebebe3;
+}
 
 .block-header {
   grid-area: head;
-  background-color: burlywood;
+
 }
 
   .block {
@@ -60,7 +72,6 @@ ul {
   }
 
   .block-details {
-    background-color: antiquewhite;
     grid-area: form;
     text-align: center;
   }
@@ -74,11 +85,10 @@ ul {
   .block-form {
   display: inline-block;
   text-align: left;
-  width: 95%
+  width: 90%
   }
 .palette-form {
   grid-area: color;
-  background-color: burlywood;
 }
   #palette {
     display: flex;
@@ -90,7 +100,6 @@ ul {
   }
 
   #pen {
-    background-color: burlywood;
     grid-area: pen;
     display: flex;
     align-items: center;
@@ -98,22 +107,26 @@ ul {
   }
 
 .card-container {
-  background-color: lavender;
+  background-color: #444755;
   display: grid;
   width: 100%;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 4fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h2" "cards";
+
   grid-template: [header-left] 'h2' 1fr [header-right]
   [main-left] 'cards' auto [main-right]
 }
 
 .cards {
-  background-color: khaki;
   grid-area: cards;
   padding: 10px 0 0 10px;
 }
 
 .card {
-  background-color: aliceblue;
+  background-color: #bd9896;
   display: block;
   width: 23%;
   float: left;
@@ -125,7 +138,7 @@ ul {
 
 .fa-times-circle {
   position: relative;
-  padding-top: 5px;
+  padding-left: 3px;
   background-color: inherit;
   border: none;
   z-index: 1
@@ -137,18 +150,15 @@ ul {
   margin: 5px;
 }
 
-.card h4 {
+.card h3 {
+  color: #4d574e;
   position:relative;
   top: -22px;
   text-align: center;
   margin-top: 5px;
-}
-
-.load {
-  background-color: linen;
-  grid-area: load;
+  margin-bottom: 0
 }
 
 footer {
-  background-color: lavender;
+  color: #444755;
 }

@@ -30,7 +30,7 @@ const createBlockCard = function(block) {
     del.className=`far fa-times-circle`;
     div.appendChild(del);
     // <h6>Block Name</h6>
-    const h = document.createElement('h4');
+    const h = document.createElement('h3');
     const name = document.createTextNode(block.attributes.name);
     h.appendChild(name);
     div.appendChild(h);
