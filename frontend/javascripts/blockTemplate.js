@@ -11,14 +11,15 @@ const createBlankBlock = function (location) {
             const pixel = document.createElement('div');
             if (location.id === 'Template') {
                 pixel.className = 'pixel bg';
+                pixel.addEventListener("click", function() {
+                    setPixelColor(pixel)
+                });
             } else {
                 pixel.className = 'pixel'
             }
             pixel.id = `${location.id}-${noCols},${26-noRows}`;
             pixel.style.backgroundColor = 'rgb(255, 255, 255)';
-            pixel.addEventListener("click", function() {
-                setPixelColor(pixel)
-            });
+
             row.appendChild(pixel);
         }
         location.appendChild(row)
