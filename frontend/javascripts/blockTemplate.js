@@ -101,7 +101,7 @@ const setBlockColors = function() {
                     // If the classList contains the className we want, go to the cart page
                     if (!mutation.target.classList.contains(className)) {
                     //    iterate through pixels and change colors
-                        const pixels = document.getElementsByClassName('pixel')
+                        const pixels = blockTemplate.getElementsByClassName('pixel');
                         for(let i = 0; i < pixels.length; i++) {
                             const p = pixels[i];
                             if (p.classList.contains(`${mutation.target.id}`)) {
