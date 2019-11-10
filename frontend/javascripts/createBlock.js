@@ -16,9 +16,12 @@ form.addEventListener('submit', function (e) {
     let difficulty = getDifficulty();
     let username = form.querySelector('input[name="username"]').value;
     let email = form.querySelector('input[name="email"]').value;
+    let duplicate = document.getElementById(name);
 
     if (name === '') {
         alert('Name must not be blank!')
+    } else if (duplicate) {
+        alert('Please pick a unique name.')
     } else if (difficulty === '') {
         alert('Please select a difficulty rating!')
     } else if (username === '') {
