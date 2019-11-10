@@ -2,6 +2,7 @@ const colorPixels = function(blank, pixels) {
     for (let p of pixels) {
         let box = document.getElementById(`${blank.id}-${p.x},${p.y}`);
         box.style.backgroundColor = p.color;
+        box.className = `pixel ${p.color_variable}`;
     }
 };
 
