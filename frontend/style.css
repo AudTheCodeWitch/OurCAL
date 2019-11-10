@@ -1,10 +1,9 @@
 body {
-  background-color: #ded5d7;
-  color: #e5d6cb;
-}
+  background-color: #eef0f2;
+  color: #2e294e;
+  max-width: 850px;
+  margin: 0 auto;
 
-header {
-  background-color: bd9896;
 }
 
 ul {
@@ -15,7 +14,7 @@ ul {
 }
 
 .block-container {
-  background-color: #444755;
+  background-color: #fff7f8;
   display: grid;
   width: 100%;
   height: auto;
@@ -28,19 +27,22 @@ ul {
 }
 
 h1 {
-  color: #4d574e;
+  color: #114b5f;
 }
 h2,
 h4,
 h5,
 h6 {
   margin-left: 10px;
-  color: #ebebe3;
+  color: #820263;
 }
 
 .block-header {
   grid-area: head;
 
+}
+#Template {
+  margin-left: 10px;
 }
 
   .block {
@@ -74,6 +76,8 @@ h6 {
   .block-details {
     grid-area: form;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 20px;
   }
 
   .block-details p {
@@ -107,7 +111,7 @@ h6 {
   }
 
 .card-container {
-  background-color: #444755;
+  background-color: #fff7f8;
   display: grid;
   width: 100%;
   width: 100%;
@@ -126,7 +130,7 @@ h6 {
 }
 
 .card {
-  background-color: #bd9896;
+  background-color: #eef0f2;
   display: block;
   width: 23%;
   float: left;
@@ -151,7 +155,7 @@ h6 {
 }
 
 .card h3 {
-  color: #4d574e;
+  color: #114b5f;
   position:relative;
   top: -22px;
   text-align: center;
@@ -160,5 +164,5 @@ h6 {
 }
 
 footer {
-  color: #444755;
+  color: #fff7f8;
 }
