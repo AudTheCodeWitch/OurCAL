@@ -40,7 +40,7 @@ npx reload-b
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome.<br />
-[Check the contributors' Code of Conduct](./CONTRIBUTING.md).<br />
+[Check out the contributors' Code of Conduct](./CODE_OF_CONDUCT.md).<br />
 
 ## Show your support
 
