@@ -4,8 +4,8 @@ class NewBlockContainer extends Component {
 
     render() {
         return (
-            <div>
-                Hi
+            <div className='block-container'>
+                New block goes here
             </div>
         );
     }
