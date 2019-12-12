@@ -4,7 +4,8 @@ class CardContainer extends Component {
     render() {
         return (
             <div className='card-container'>
-                Cards go here
+                <h2>View Blocks</h2>
+            {/*TODO: Render block cards*/}
             </div>
         );
     }
