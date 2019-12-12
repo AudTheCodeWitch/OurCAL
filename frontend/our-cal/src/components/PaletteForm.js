@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 
 class PaletteForm extends Component {
+
     render() {
         return (
             <div>
                 <form className="palette-form">
                     <ul id='palette'>
-                        <li>1</li>
+                    {/*TODO: Render Color Pickers*/}
                     </ul>
                 </form>
                 <div id='pen'/>
@@ -14,6 +15,6 @@ class PaletteForm extends Component {
             </div>
         );
     }
-}
+};
 
 export default PaletteForm;
