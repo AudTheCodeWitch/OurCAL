@@ -11,6 +11,7 @@ function App() {
             <h1>OurCal: Community Graphghan</h1>
         </header>
         <NewBlockContainer />
+        <br/>
         <CardContainer />
         <footer>
             <ul>
