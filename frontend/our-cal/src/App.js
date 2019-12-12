@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import NewBlockContainer from "./containers/NewBlockContainer";
+import CardContainer from "./containers/CardContainer";
 import CodeWitchLogo from './CodeWitchLogo.png'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
             <h1>OurCal: Community Graphghan</h1>
         </header>
         <NewBlockContainer />
+        <CardContainer />
         <footer>
             <ul>
                 <li>©2019 Audrea Cook</li>
