@@ -1,38 +1,204 @@
-.App {
+/*.App {*/
+/*  text-align: center;*/
+/*}*/
+
+/*.App-logo {*/
+/*  height: 40vmin;*/
+/*  pointer-events: none;*/
+/*}*/
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  .App-logo {*/
+/*    animation: App-logo-spin infinite 20s linear;*/
+/*  }*/
+/*}*/
+
+/*.App-header {*/
+/*  background-color: #282c34;*/
+/*  min-height: 100vh;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  font-size: calc(10px + 2vmin);*/
+/*  color: white;*/
+/*}*/
+
+/*.App-link {*/
+/*  color: #61dafb;*/
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
+
+body {
+  background-color: #eef0f2;
+  color: #2e294e;
+  max-width: 850px;
+  margin: 0 auto;
+
+}
+
+ul {
+  list-style-type: none;
   text-align: center;
+  padding-left: 0;
+  margin-left: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.block-container {
+  background-color: #fff7f8;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "head head" "block form" "color color";
+  /*grid-template: [header-left] 'head head head head head' auto [header-right]*/
+  /*    [main-left] 'block block block block form' auto [main-right]*/
+  /*[footer-left] 'color color color color color' auto [footer-right];*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: #114b5f;
+}
+h2,
+h4,
+h5,
+h6 {
+  margin-left: 10px;
+  color: #820263;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.block-header {
+  grid-area: head;
+
+}
+#Template {
+  margin-left: 10px;
+}
+
+.block {
+  grid-area: block;
+  display: table;
+  border-spacing: 1px;
+  background-color: black;
+  height: auto;
+  width: 100%;
+  grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+}
+
+.row {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  background-color: white;
+  font-size: 1em;
+  width: 1em;
+
+}
+
+.pixel:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.block-details {
+  grid-area: form;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.block-details p {
+  display: inline-block;
+  text-align: left;
+  width: 95%;
+}
+
+.block-form {
+  display: inline-block;
+  text-align: left;
+  width: 90%
+}
+.palette-form {
+  grid-area: color;
+}
+#palette {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+.color {
+  text-align:center;
+}
+
+#pen {
+  grid-area: pen;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-container {
+  background-color: #fff7f8;
+  display: grid;
+  width: 100%;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 4fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h2" "cards";
+
+  grid-template: [header-left] 'h2' 1fr [header-right]
+  [main-left] 'cards' auto [main-right]
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cards {
+  grid-area: cards;
+  padding: 10px 0 0 10px;
 }
+
+.card {
+  background-color: #eef0f2;
+  display: block;
+  width: 23%;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.fa-times-circle {
+  position: relative;
+  padding-left: 3px;
+  background-color: inherit;
+  border: none;
+  z-index: 1
+}
+
+.card ul {
+  text-align: left;
+  padding-left: 0;
+  margin: 5px;
+}
+
+.card h3 {
+  color: #114b5f;
+  position:relative;
+  top: -22px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0
+}
+
