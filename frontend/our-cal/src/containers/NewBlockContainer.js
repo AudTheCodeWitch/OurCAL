@@ -5,7 +5,7 @@ class NewBlockContainer extends Component {
     render() {
         return (
             <div>
-                Hello World
+                Hi
 
             </div>
         );
