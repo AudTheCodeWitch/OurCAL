@@ -6,7 +6,6 @@ class NewBlockContainer extends Component {
         return (
             <div>
                 Hi
-
             </div>
         );
     }
