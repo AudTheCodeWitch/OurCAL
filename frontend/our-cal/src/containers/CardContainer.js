@@ -7,6 +7,7 @@ class CardContainer extends Component {
             <div className='card-container'>
                 <h2>View Blocks</h2>
                 <div className='cards'>
+                    {/*TODO write map card function*/}
                     <Card />
                     <Card />
                     <Card />
