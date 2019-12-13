@@ -4,7 +4,7 @@ class Pixel extends Component {
 
     render() {
         return (
-            <div className="pixel">
+            <div className="pixel ">
 
             </div>
         );
