@@ -8,7 +8,7 @@ class PaletteForm extends Component {
                 <form className="palette-form">
                     <ul id='palette'>
                     {/*TODO : Render Color Pickers*/}
-                    testing
+                    Color Pickers Go Here
                     </ul>
                 </form>
                 <div id='pen'/>
