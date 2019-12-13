@@ -6,7 +6,17 @@ class Card extends Component {
     render() {
         return (
             <div className='card'>
-                Card 1
+                <button className='far fa-times-circle'>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                </button>
+                <h3>Block Name</h3>
+                <div className='block'>
+                    Block goes here
+                </div>
+                <ul>
+                    <li>Block Difficulty</li>
+                    <li>Username</li>
+                </ul>
             </div>
         );
     }
