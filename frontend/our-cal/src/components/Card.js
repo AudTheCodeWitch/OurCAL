@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import CompleteBlock from "./CompleteBlock";
 
 class Card extends Component {
     render() {
@@ -11,7 +12,7 @@ class Card extends Component {
                 </button>
                 <h3>Block Name</h3>
                 <div className='block'>
-                    Block goes here
+                    <CompleteBlock/>
                 </div>
                 <ul>
                     <li>Block Difficulty</li>
