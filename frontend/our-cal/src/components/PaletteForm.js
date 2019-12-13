@@ -11,10 +11,9 @@ class PaletteForm extends Component {
                 <li key={index}>
                     {/*TODO Pass index+2 as props to palette*/}
                     {/*<button>Color {index+2}</button>*/}
-                    <input type='radio' name='pen' id={'pen '+(index+1)}/>
-                    <br/>
-                    <br/>
                     <Palette />
+                    <br/>
+                    <input type='radio' name='pen' id={'pen '+(index+1)}/>
                 </li>
             )
 
@@ -30,12 +29,10 @@ class PaletteForm extends Component {
                 <form className="palette-form">
                     <ul id='palette'>
                         <li>
-                            Select your pen:
-                            <br/>
-                            <br/>
                             <Palette />
+                            <br/>
+                            Select your pen:
                         </li>
-                    {/*TODO : Render Color Pickers*/}
                         {this.createPenSelector()}
                     </ul>
                 </form>
