@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
+import Card from "../components/Card";
 
 class CardContainer extends Component {
     render() {
         return (
             <div className='card-container'>
                 <h2>View Blocks</h2>
-            {/*TODO : Render block cards*/}
+                <div className='cards'>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
             </div>
         );
     }
