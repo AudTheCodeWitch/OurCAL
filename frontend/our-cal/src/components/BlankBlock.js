@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Pixel from "./Pixel";
 
-class Block extends Component {
+class BlankBlock extends Component {
 
     createColumns = () => {
         const columns = new Array(25);
@@ -35,4 +35,4 @@ class Block extends Component {
     }
 }
 
-export default Block;
+export default BlankBlock;

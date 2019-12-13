@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BlockHeader from "../components/BlockHeader";
-import Block from "../components/Block";
+import BlankBlock from "../components/BlankBlock";
 import BlockForm from '../components/BlockForm'
 import PaletteForm from "../components/PaletteForm";
 
@@ -10,7 +10,7 @@ class NewBlockContainer extends Component {
         return (
             <div className='block-container'>
                 <BlockHeader />
-                <Block />
+                <BlankBlock />
                 <BlockForm />
                 <PaletteForm />
             </div>
