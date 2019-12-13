@@ -9,8 +9,7 @@ class PaletteForm extends Component {
         for (const [index] of array.entries()) {
             pens.push(
                 <li key={index}>
-                    {/*TODO Pass index+2 as props to palette*/}
-                    {/*<button>Color {index+2}</button>*/}
+                    {/*TODO Pass index+1 as props to palette*/}
                     <Palette />
                     <br/>
                     <input type='radio' name='pen' id={'pen '+(index+1)}/>

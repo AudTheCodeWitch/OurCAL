@@ -8,7 +8,7 @@ class CompleteBlock extends Component {
         const items = [];
         for (const [index] of columns.entries()) {
             let p = <Pixel/>;
-            // TODO Add id and class names to pixels
+            // TODO Add id and class names to pixels - pass as props
             items.push(p)
         }
         return items
@@ -23,7 +23,7 @@ class CompleteBlock extends Component {
             </div>)
         }
         return items
-    }
+    };
 
 
     render() {
