@@ -12,7 +12,7 @@ class Card extends Component {
                 </button>
                 <h3>{this.props.block.attributes.name}</h3>
                 <div className='block'>
-                    <CompleteBlock/>
+                    <CompleteBlock block={this.props.block.attributes}/>
                 </div>
                 <ul>
                     <li>{this.props.block.attributes.difficulty.rating}</li>
