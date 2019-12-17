@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from "../components/Card";
 import { connect } from 'react-redux'
+import { fetchBlocks } from "../actions/fetchBlocks";
 
 class CardContainer extends Component {
 
@@ -11,12 +12,16 @@ class CardContainer extends Component {
         );
     };
 
+    componentDidMount() {
+        this.props.fetchBlocks()
+    }
+
     render() {
         return (
             <div className='card-container'>
                 <h2>View Blocks</h2>
                 <div className='cards'>
-                    {this.createCards(this.props.blocks)}
+                    {this.createCards(this.props.cards)}
                 </div>
             </div>
         );
@@ -24,7 +29,7 @@ class CardContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { blocks: state.blocks.all }
+    return { cards: state.cards.all }
 };
 
-export default connect(mapStateToProps)(CardContainer);
+export default connect(mapStateToProps, {fetchBlocks})(CardContainer);
