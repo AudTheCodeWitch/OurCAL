@@ -28,8 +28,8 @@ class CompleteBlock extends Component {
 
     render() {
         return (
-            <div className='template block'>
-                {this.createBlock()}
+            <div className='block' id={this.props.block.name}>
+                {this.createBlock(this.props.block)}
             </div>
         );
     }
