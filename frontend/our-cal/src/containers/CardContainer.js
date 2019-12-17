@@ -12,7 +12,6 @@ class CardContainer extends Component {
     };
 
     render() {
-        console.log(this.props.blocks)
         return (
             <div className='card-container'>
                 <h2>View Blocks</h2>
