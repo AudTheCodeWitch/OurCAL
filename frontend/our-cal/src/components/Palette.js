@@ -50,7 +50,10 @@ class Palette extends React.Component {
         }
         return (
             <div>
-                <button onClick={ this.handleClick }>Pick Color</button>
+                <button id={"Color " + this.props.id}
+                        onClick={ this.handleClick }
+                        style={{backgroundColor: this.state.color}}
+                >{this.props.id === 'background' ? 'Background Color' : `Color ${this.props.id}`}</button>
                 { this.state.displayColorPicker ? <div style={ popover }>
                     <div style={ cover } onClick={ this.handleClose }/>
                     <ChromePicker onChange={this.handleChange} />
