@@ -3,11 +3,11 @@ import Pixel from "./Pixel";
 
 class BlankBlock extends Component {
 
-    createColumns = () => {
+    createColumns = (row) => {
         const columns = new Array(25);
         const items = [];
         for (const [index] of columns.entries()) {
-            let p = <Pixel/>;
+            let p = <Pixel row={row} column={index} location='Template'/>;
             // TODO Add id and class names to pixels
             items.push(p)
         }
@@ -19,7 +19,7 @@ class BlankBlock extends Component {
         const items = [];
         for (const [index] of rows.entries()) {
             items.push(<div key={index} className='row' id={'row-'+(index+1)}>
-                {this.createColumns()}
+                {this.createColumns(index)}
             </div>)
         }
         return items
