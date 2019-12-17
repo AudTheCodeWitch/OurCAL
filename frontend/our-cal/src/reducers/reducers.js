@@ -9,6 +9,9 @@ export default rootReducer;
 
 function cardsReducer(state = { all: [],}, action) {
     switch (action.type) {
+        case 'FETCH_BLOCKS':
+            console.log('fetching');
+            return {all: action.payload};
         case 'DELETE_BLOCK':
             console.log('delete button clicked');
             return {
