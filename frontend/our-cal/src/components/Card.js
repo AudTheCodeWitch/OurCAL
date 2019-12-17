@@ -13,8 +13,8 @@ class Card extends Component {
 
     render() {
         return (
-            <div className='card'>
-                <button className='fa-times-circle'>
+            <div className='card' id={this.props.block.id + '-' + this.props.block.attributes.name}>
+                <button onClick={(e) => this.handleDeleteClick(this.props.block.id, e)} className='fa-times-circle'>
                     <FontAwesomeIcon icon={ faTimesCircle } />
                 </button>
                 <h3>{this.props.block.attributes.name}</h3>
