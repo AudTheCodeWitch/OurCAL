@@ -18,7 +18,7 @@ class CompleteBlock extends Component {
         const items = [];
         for (const [index] of rows.entries()) {
             items.push(<div key={index} className='row' id={'row-'+(index+1)}>
-                {this.createColumns()}
+                {this.createColumns(index, block.name)}
             </div>)
         }
         return items
