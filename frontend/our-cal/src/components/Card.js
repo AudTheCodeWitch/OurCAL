@@ -10,15 +10,13 @@ class Card extends Component {
                 <button className='fa-times-circle'>
                     <FontAwesomeIcon icon={ faTimesCircle } />
                 </button>
-                {/*TODO Pass as props*/}
-                <h3>Block Name</h3>
+                <h3>{this.props.block.attributes.name}</h3>
                 <div className='block'>
                     <CompleteBlock/>
                 </div>
                 <ul>
-                    {/*TODO Pass as props*/}
-                    <li>Block Difficulty</li>
-                    <li>Username</li>
+                    <li>{this.props.block.attributes.difficulty.rating}</li>
+                    <li>{this.props.block.attributes.user.username}</li>
                 </ul>
             </div>
         );
