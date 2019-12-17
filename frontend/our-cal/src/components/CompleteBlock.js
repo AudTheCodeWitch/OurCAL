@@ -7,8 +7,7 @@ class CompleteBlock extends Component {
         const columns = new Array(25);
         const items = [];
         for (const [index] of columns.entries()) {
-            let p = <Pixel/>;
-            // TODO Add id and class names to pixels - pass as props
+            let p = <Pixel row={row} column={index} location={location}/>;
             items.push(p)
         }
         return items
