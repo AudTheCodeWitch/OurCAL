@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 class CardContainer extends Component {
 
     createCards = (blocks) => {
-        // const cards = new Array(8);
-        const items = [];
-        for (const [index] of blocks.entries()) {
-            let c = <Card/>;
+        let items = [];
+        blocks.map((block, key) => {
+            let c = <Card block={block} key={block.id}/>;
             items.push(c)
-        }
+            }
+        );
         return items
     };
 
