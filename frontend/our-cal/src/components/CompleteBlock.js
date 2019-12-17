@@ -13,7 +13,7 @@ class CompleteBlock extends Component {
         return items
     };
 
-    createBlock = () => {
+    createBlock = (block) => {
         const rows = new Array(25);
         const items = [];
         for (const [index] of rows.entries()) {
