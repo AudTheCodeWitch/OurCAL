@@ -5,6 +5,7 @@ import { ChromePicker } from 'react-color'
 
 class Palette extends React.Component {
     state = {
+        color: '#fff',
         displayColorPicker: false,
     };
 
