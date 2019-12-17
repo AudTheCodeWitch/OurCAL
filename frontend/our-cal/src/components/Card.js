@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
 import CompleteBlock from "./CompleteBlock";
@@ -23,4 +24,4 @@ class Card extends Component {
     }
 }
 
-export default Card;
+export default connect(null, {destroyBlock})(Card);
