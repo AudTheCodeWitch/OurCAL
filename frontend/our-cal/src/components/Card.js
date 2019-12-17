@@ -3,8 +3,14 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
 import CompleteBlock from "./CompleteBlock";
+import { destroyBlock } from "../actions/destroyBlock";
 
 class Card extends Component {
+
+    handleDeleteClick = (id) => {
+        this.props.destroyBlock(id)
+    };
+
     render() {
         return (
             <div className='card'>
