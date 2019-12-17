@@ -4,7 +4,9 @@ class Pixel extends Component {
 
     render() {
         return (
-            <div className="pixel ">
+            <div className="pixel bg"
+                 id={this.props.location + '-' + (this.props.column + 1) + ',' + (25-this.props.row) }
+            >
 
             </div>
         );
