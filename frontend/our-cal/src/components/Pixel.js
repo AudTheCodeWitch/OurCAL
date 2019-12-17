@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 
-class Pixel extends Component {
+function Pixel({location, column, row}) {
 
-    render() {
-        return (
-            <div className="pixel bg"
-                 id={this.props.location + '-' + (this.props.column + 1) + ',' + (25-this.props.row) }
-            >
+    return (
+        <div className="pixel bg"
+             id={location + '-' + (column + 1) + ',' + (25-row) }
+        >
 
-            </div>
-        );
-    }
+        </div>
+    );
+
 }
+
+// const Pixel = ({location, column, row}) => (
+//     <div className="pixel bg"
+//          id={location + '-' + (column + 1) + ',' + (25-row) }
+//     >
+//     </div>
+// )
 
 export default Pixel;
