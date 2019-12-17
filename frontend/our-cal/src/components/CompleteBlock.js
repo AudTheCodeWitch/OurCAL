@@ -3,7 +3,7 @@ import Pixel from "./Pixel";
 
 class CompleteBlock extends Component {
 
-    createColumns = () => {
+    createColumns = (row, location) => {
         const columns = new Array(25);
         const items = [];
         for (const [index] of columns.entries()) {
