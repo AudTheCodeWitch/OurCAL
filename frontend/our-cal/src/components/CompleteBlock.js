@@ -24,6 +24,18 @@ class CompleteBlock extends Component {
         return items
     };
 
+    componentDidMount() {
+        let colorPixels = (blank, pixels) => {
+            for (let p of pixels) {
+                let box = document.getElementById(`${blank.id}-${p.x},${p.y}`);
+                box.style.backgroundColor = p.color;
+                box.className = `pixel ${p.color_variable}`;
+            }
+        };
+        let b = document.getElementById(this.props.block.name)
+        colorPixels(b, this.props.block.pixels)
+    }
+
 
     render() {
         return (
