@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
     cards: cardsReducer,
-    blocks: blockReducer
+    block: blockReducer
 });
 
 export default rootReducer;
@@ -14,8 +14,10 @@ function cardsReducer(state = { all: [],}, action) {
             return {all: action.payload};
         case 'DELETE_BLOCK':
             console.log('delete button clicked');
+            let block = state.all.find(b => b.id === action.id);
+            let index = state.all.indexOf(block);
             return {
-                ...state
+                all: [...state.all.slice(0, index), ... state.all.slice(index + 1)]
             }
         default:
             return state;
