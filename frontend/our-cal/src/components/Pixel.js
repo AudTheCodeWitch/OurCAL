@@ -8,7 +8,19 @@ class Pixel extends Component {
 
     };
 
-function Pixel({location, column, row}) {
+    componentDidMount() {
+        let x = this.props.column + 1;
+        let y = 25 - this.props.row;
+        let pixel = {
+            id: x + ', ' + y,
+            x: x,
+            y: y,
+            color: this.props.colors.bg,
+            colorVariable: 'bg'
+        };
+        if (this.props.location === 'Template') {
+            //    add pixel to store
+            this.props.addPixel(pixel)
 
         }
     }
@@ -33,11 +45,8 @@ function Pixel({location, column, row}) {
     }
 }
 
-// const Pixel = ({location, column, row}) => (
-//     <div className="pixel bg"
-//          id={location + '-' + (column + 1) + ',' + (25-row) }
-//     >
-//     </div>
-// )
+const mapStateToProps = (state) => {
+    return { colors: state.palette.colors }
+};
 
-export default Pixel;
+export default connect(mapStateToProps,{addPixel})(Pixel);
