@@ -1,4 +1,12 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addPixel } from "../actions/addPixel";
+
+class Pixel extends Component {
+
+    handleClick = () => {
+
+    };
 
 function Pixel({location, column, row}) {
 
