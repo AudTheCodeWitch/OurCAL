@@ -17,7 +17,7 @@ class PaletteForm extends Component {
                 <li key={index}>
                     <Palette id={index+1} />
                     <br/>
-                    <input type='radio' name='pen' id={'pen '+(index+1)} onClick={() => this.handlePenSelect(index+1)}/>
+                    <input type='radio' name='pen' id={'pen '+(index+1)} onClick={() => this.handlePenSelect('c' + (index+1))}/>
                 </li>
             )
 
