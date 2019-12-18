@@ -1,7 +1,7 @@
-// 'use strict'
-
 import React from 'react'
 import { ChromePicker } from 'react-color'
+import { connect } from "react-redux";
+import { changeColor } from "../actions/changeColor";
 
 class Palette extends React.Component {
     state = {
@@ -51,4 +51,4 @@ class Palette extends React.Component {
     }
 }
 
-export default Palette;
+export default connect(null, {changeColor})(Palette);
