@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import Palette from "./Palette";
+import {connect} from "react-redux";
+import { setPen } from "../actions/setPen";
 
 class PaletteForm extends Component {
+
+    handlePenSelect = (penNumber) => {
+        this.props.setPen(penNumber)
+    };
 
     createPenSelector = () => {
         const array = new Array(5);
@@ -11,7 +17,7 @@ class PaletteForm extends Component {
                 <li key={index}>
                     <Palette id={index+1} />
                     <br/>
-                    <input type='radio' name='pen' id={'pen '+(index+1)}/>
+                    <input type='radio' name='pen' id={'pen '+(index+1)} onClick={() => this.handlePenSelect(index+1)}/>
                 </li>
             )
 
@@ -41,4 +47,4 @@ class PaletteForm extends Component {
     }
 };
 
-export default PaletteForm;
+export default connect(null, {setPen})(PaletteForm);
