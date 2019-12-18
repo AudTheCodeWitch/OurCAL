@@ -10,14 +10,27 @@ class Pixel extends Component {
 
 function Pixel({location, column, row}) {
 
-    return (
-        <div className="pixel bg"
-             id={location + '-' + (column + 1) + ',' + (25-row) }
-        >
+        }
+    }
 
-        </div>
-    );
-
+    render() {
+        const { location, column, row } = this.props;
+        if (location === 'Template') {
+            return (
+                <div className="pixel bg"
+                     id={location + '-' + (column + 1) + ',' + (25-row) }
+                     style={{backgroundColor: this.props.colors.bg}}
+                     onClick={this.handleClick}
+                />
+            );}
+        else {
+            return (
+                <div className="pixel bg"
+                     id={location + '-' + (column + 1) + ',' + (25-row) }
+                />
+            )
+        }
+    }
 }
 
 // const Pixel = ({location, column, row}) => (
