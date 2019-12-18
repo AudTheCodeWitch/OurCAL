@@ -2,7 +2,8 @@ import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
     cards: cardsReducer,
-    block: blockReducer,
+    blockTemplate: blockTemplateReducer,
+    blockDetails: blockDetailsReducer,
     palette: paletteReducer
 });
 
@@ -18,16 +19,28 @@ function cardsReducer(state = { all: [],}, action) {
             let index = state.all.indexOf(block);
             return {
                 all: [...state.all.slice(0, index), ...state.all.slice(index + 1)]
-            }
+            };
         default:
             return state;
     }
 }
 
-function blockReducer(state = {
+function blockTemplateReducer(state = {
+    blockTemplate: {},
+}, action) {
+    switch (action.type) {
+        case 'SUBMIT_BLOCK':
+            console.log('block submitted');
+            return {
+            };
+        default:
+            return state;
+    }
+}
+
+function blockDetailsReducer(state = {
     blockDetails: {},
-    blockTemplate: {}
-,}, action) {
+}, action) {
     switch (action.type) {
         case 'SUBMIT_BLOCK':
             console.log('block submitted');
