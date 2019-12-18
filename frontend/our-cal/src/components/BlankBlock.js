@@ -8,7 +8,6 @@ class BlankBlock extends Component {
         const items = [];
         for (const [index] of columns.entries()) {
             let p = <Pixel row={row} column={index} location='Template'/>;
-            // TODO Add id and class names to pixels
             items.push(p)
         }
         return items
