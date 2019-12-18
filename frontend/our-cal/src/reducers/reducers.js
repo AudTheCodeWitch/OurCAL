@@ -50,8 +50,14 @@ function paletteReducer(state = {
 }, action) {
     switch (action.type) {
         case 'CHANGE_COLOR':
-            console.log('color changed');
+            let button = action.data.button;
+            let color = action.data.color;
             return {
+                ...state,
+                colors: {
+                    ...state.colors,
+                    [button]: color
+                }
             };
         default:
             return state;
