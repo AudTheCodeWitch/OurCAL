@@ -5,7 +5,7 @@ import { changeColor } from "../actions/changeColor";
 
 class Palette extends React.Component {
     state = {
-        color: '#fff',
+        // color: '#fff',
         displayColorPicker: false,
     };
 
@@ -28,27 +28,34 @@ class Palette extends React.Component {
         const popover = {
             position: 'absolute',
             zIndex: '2',
-        }
+        };
         const cover = {
             position: 'fixed',
             top: '0px',
             right: '0px',
             bottom: '0px',
             left: '0px',
-        }
+        };
+        const currentColor = this.props.id === 'background' ? 'bg' : `c${this.props.id}`;
         return (
             <div>
                 <button id={"Color " + this.props.id}
                         onClick={ this.handleClick }
-                        style={{backgroundColor: this.state.color}}
-                >{this.props.id === 'background' ? 'Background Color' : `Color ${this.props.id}`}</button>
+                        style={{backgroundColor: this.props.colors[currentColor]}}
+                >
+                    {this.props.id === 'background' ? 'Background Color' : `Color ${this.props.id}`}
+                </button>
                 { this.state.displayColorPicker ? <div style={ popover }>
                     <div style={ cover } onClick={ this.handleClose }/>
-                    <ChromePicker color={this.state.color} onChangeComplete={this.handleChangeComplete} />
+                    <ChromePicker color={this.props.colors[currentColor]} onChangeComplete={this.handleChangeComplete} />
                 </div> : null }
             </div>
         )
     }
 }
 
-export default connect(null, {changeColor})(Palette);
+const mapStateToProps = (state) => {
+    return { colors: state.palette.colors }
+};
+
+export default connect(mapStateToProps, {changeColor})(Palette);
