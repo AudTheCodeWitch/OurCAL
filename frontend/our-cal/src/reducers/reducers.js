@@ -26,12 +26,19 @@ function cardsReducer(state = { all: [],}, action) {
 }
 
 function blockTemplateReducer(state = {
-    blockTemplate: {},
+    blockTemplate: [],
 }, action) {
     switch (action.type) {
-        case 'SUBMIT_BLOCK':
-            console.log('block submitted');
+        case 'ADD_PIXEL':
             return {
+                blockTemplate: [...state.blockTemplate, action.payload]
+            }
+        case 'COLOR_PIXEL':
+            console.log('pixel colored');
+            let pixel = state.blockTemplate.find(p => p.id === action.id);
+            let index = state.blockTemplate.indexOf(pixel);
+            return {
+                blockTemplate: [...state.blockTemplate.slice(0, index), action.pixel, ...state.blockTemplate.slice(index + 1)]
             };
         default:
             return state;
