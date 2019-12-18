@@ -17,7 +17,7 @@ function cardsReducer(state = { all: [],}, action) {
             let block = state.all.find(b => b.id === action.id);
             let index = state.all.indexOf(block);
             return {
-                all: [...state.all.slice(0, index), ... state.all.slice(index + 1)]
+                all: [...state.all.slice(0, index), ...state.all.slice(index + 1)]
             }
         default:
             return state;
@@ -46,7 +46,7 @@ function paletteReducer(state = {
         c3: '#fff',
         c4: '#fff',
         c5: '#fff'},
-    pen: {},
+    pen: '',
 }, action) {
     switch (action.type) {
         case 'CHANGE_COLOR':
