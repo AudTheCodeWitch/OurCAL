@@ -32,13 +32,15 @@ function blockTemplateReducer(state = {
         case 'ADD_PIXEL':
             return {
                 blockTemplate: [...state.blockTemplate, action.payload]
-            }
+            };
         case 'COLOR_PIXEL':
-            console.log('pixel colored');
-            let pixel = state.blockTemplate.find(p => p.id === action.id);
+            console.log(action.payload);
+            let pixel = state.blockTemplate.find(p => p.id === action.payload.id);
             let index = state.blockTemplate.indexOf(pixel);
+            pixel.color = action.payload.color;
+            pixel.colorVariable = action.payload.pen;
             return {
-                blockTemplate: [...state.blockTemplate.slice(0, index), action.pixel, ...state.blockTemplate.slice(index + 1)]
+                blockTemplate: [...state.blockTemplate.slice(0, index), pixel, ...state.blockTemplate.slice(index + 1)]
             };
         default:
             return state;
