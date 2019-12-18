@@ -5,7 +5,6 @@ import { changeColor } from "../actions/changeColor";
 
 class Palette extends React.Component {
     state = {
-        // color: '#fff',
         displayColorPicker: false,
     };
 
@@ -18,8 +17,7 @@ class Palette extends React.Component {
         this.setState({ displayColorPicker: false })
     };
 
-    handleChangeComplete = (color, event) => {
-        // this.setState({ color: color.hex })
+    handleChangeComplete = (color) => {
         let button = this.props.id === 'background' ? 'bg' : `c${this.props.id}`;
         this.props.changeColor(button, color.hex)
     };
