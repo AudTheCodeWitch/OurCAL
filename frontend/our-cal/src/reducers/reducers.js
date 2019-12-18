@@ -59,6 +59,11 @@ function paletteReducer(state = {
                     [button]: color
                 }
             };
+        case 'SET_PEN':
+            return {
+                ...state,
+                pen: action.penNumber
+            };
         default:
             return state;
     }
