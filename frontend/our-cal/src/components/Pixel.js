@@ -1,10 +1,26 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { addPixel } from "../actions/addPixel";
+import { colorPixel } from "../actions/colorPixel";
 
 class Pixel extends Component {
+    handleClick = (pen, event) => {
+        if (pen === '') {
+            alert('Please select a pen, first!')
+        }
 
-    handleClick = () => {
+        let pixel = event.target;
+        let color;
+
+        if (pixel.className === `pixel ${pen}`) {
+            pixel.className=`pixel bg`;
+            color = this.props.colors.bg
+        } else {
+            pixel.className=`pixel ${pen}`;
+            color = this.props.colors[pen]
+        }
+        pixel.style.backgroundColor = color;
+        this.props.colorPixel(pixel.id.split('-')[1], pen, color)
 
     };
 
@@ -21,18 +37,17 @@ class Pixel extends Component {
         if (this.props.location === 'Template') {
             //    add pixel to store
             this.props.addPixel(pixel)
-
         }
     }
 
     render() {
-        const { location, column, row } = this.props;
+        const { location, column, row, pen, colors } = this.props;
         if (location === 'Template') {
             return (
-                <div className="pixel bg"
-                     id={location + '-' + (column + 1) + ',' + (25-row) }
-                     style={{backgroundColor: this.props.colors.bg}}
-                     onClick={this.handleClick}
+                <div className={'pixel bg'}
+                     id={location + '-' + (column + 1) + ', ' + (25-row) }
+                     style={{backgroundColor: colors.bg}}
+                     onClick={(event)=>{this.handleClick(pen, event)}}
                 />
             );}
         else {
@@ -46,7 +61,7 @@ class Pixel extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { colors: state.palette.colors }
+    return { colors: state.palette.colors, pen: state.palette.pen}
 };
 
-export default connect(mapStateToProps,{addPixel})(Pixel);
+export default connect(mapStateToProps,{addPixel, colorPixel})(Pixel);
