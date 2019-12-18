@@ -18,22 +18,10 @@ class Palette extends React.Component {
         this.setState({ displayColorPicker: false })
     };
 
-    handleChange(color, event) {
-        // color = {
-        //   hex: '#333',
-        //   rgb: {
-        //     r: 51,
-        //     g: 51,
-        //     b: 51,
-        //     a: 1,
-        //   },
-        //   hsl: {
-        //     h: 0,
-        //     s: 0,
-        //     l: .20,
-        //     a: 1,
-        //   },
-        // }
+    handleChangeComplete = (color, event) => {
+        this.setState({ color: color.hex })
+        // TODO: change from setState to keeping color in the store
+
     };
 
     render() {
@@ -56,7 +44,7 @@ class Palette extends React.Component {
                 >{this.props.id === 'background' ? 'Background Color' : `Color ${this.props.id}`}</button>
                 { this.state.displayColorPicker ? <div style={ popover }>
                     <div style={ cover } onClick={ this.handleClose }/>
-                    <ChromePicker onChange={this.handleChange} />
+                    <ChromePicker color={this.state.color} onChangeComplete={this.handleChangeComplete} />
                 </div> : null }
             </div>
         )
