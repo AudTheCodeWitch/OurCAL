@@ -19,9 +19,9 @@ class Palette extends React.Component {
     };
 
     handleChangeComplete = (color, event) => {
-        this.setState({ color: color.hex })
-        // TODO: change from setState to keeping color in the store
-
+        // this.setState({ color: color.hex })
+        let button = this.props.id === 'background' ? 'bg' : `c${this.props.id}`;
+        this.props.changeColor(button, color.hex)
     };
 
     render() {
