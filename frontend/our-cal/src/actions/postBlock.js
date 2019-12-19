@@ -1,18 +1,18 @@
 import { createBlock } from "./createBlock";
 
 export function postBlock(details, block) {
-    console.log(block)
+    console.log(details)
+
     let blockData = {
         block: {
-            name: details.name,
+            name: details.blockName,
             pixels_attributes: block},
         difficulty: details.difficulty,
         user: {
             email: details.email,
             username: details.username}
         };
-
-
+    console.log(blockData)
     return dispatch =>
         fetch("http://localhost:3000/api/blocks", {
             method: 'POST',
