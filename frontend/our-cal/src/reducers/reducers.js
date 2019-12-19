@@ -3,7 +3,6 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
     cards: cardsReducer,
     blockTemplate: blockTemplateReducer,
-    blockDetails: blockDetailsReducer,
     palette: paletteReducer
 });
 
@@ -13,6 +12,11 @@ function cardsReducer(state = { all: [],}, action) {
     switch (action.type) {
         case 'FETCH_BLOCKS':
             return {all: action.payload};
+        case 'CREATE_BLOCK':
+            console.log(action.block);
+            return {
+                all: [...state.all, action.block]
+            };
         case 'DELETE_BLOCK':
             console.log('delete button clicked');
             let block = state.all.find(b => b.id === action.id);
@@ -34,26 +38,12 @@ function blockTemplateReducer(state = {
                 blockTemplate: [...state.blockTemplate, action.payload]
             };
         case 'COLOR_PIXEL':
-            console.log(action.payload);
             let pixel = state.blockTemplate.find(p => p.id === action.payload.id);
             let index = state.blockTemplate.indexOf(pixel);
             pixel.color = action.payload.color;
-            pixel.colorVariable = action.payload.pen;
+            pixel.color_variable = action.payload.pen;
             return {
                 blockTemplate: [...state.blockTemplate.slice(0, index), pixel, ...state.blockTemplate.slice(index + 1)]
-            };
-        default:
-            return state;
-    }
-}
-
-function blockDetailsReducer(state = {
-    blockDetails: {},
-}, action) {
-    switch (action.type) {
-        case 'SUBMIT_BLOCK':
-            console.log('block submitted');
-            return {
             };
         default:
             return state;
