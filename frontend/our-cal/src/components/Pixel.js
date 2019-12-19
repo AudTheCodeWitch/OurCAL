@@ -54,12 +54,12 @@ class Pixel extends Component {
 
     render() {
         // console.log('rendering')
-        const { location, column, row, pen, colors } = this.props;
+        const { location, column, row, pen, colors, color } = this.props;
         if (location === 'Template') {
             return (
                 <div className={'pixel bg'}
                      id={location + '-' + (column + 1) + ', ' + (25-row) }
-                     style={{backgroundColor: colors.bg}}
+                     style={{backgroundColor: colors[`${color}`]}}
                      onClick={(event)=>{this.handleClick(pen, event)}}
                 />
             );}
@@ -73,8 +73,19 @@ class Pixel extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return { colors: state.palette.colors, pen: state.palette.pen}
+const mapStateToProps = (state, props) => {
+    const pixel = state.blockTemplate.blockTemplate.find(
+        p => p.x === props.column + 1 && p.y === 25 - props.row
+    );
+    let color_variable = "bg";
+    if (pixel) {
+        color_variable = pixel.color_variable;
+    }
+    return {
+        colors: state.palette.colors,
+        pen: state.palette.pen,
+        color: color_variable
+    };
 };
 
 export default connect(mapStateToProps,{addPixel, colorPixel})(Pixel);
