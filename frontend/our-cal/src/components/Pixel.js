@@ -4,6 +4,14 @@ import { addPixel } from "../actions/addPixel";
 import { colorPixel } from "../actions/colorPixel";
 
 class Pixel extends Component {
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         color: props.colors.bg
+    //     };
+    // }
+
     handleClick = (pen, event) => {
         if (pen === '') {
             alert('Please select a pen, first!')
@@ -15,11 +23,15 @@ class Pixel extends Component {
         if (pixel.className === `pixel ${pen}`) {
             pixel.className=`pixel bg`;
             color = this.props.colors.bg
+
         } else {
             pixel.className=`pixel ${pen}`;
             color = this.props.colors[pen]
         }
         pixel.style.backgroundColor = color;
+        // this.setState({
+        //     color: color
+        // })
         this.props.colorPixel(pixel.id.split('-')[1], pen, color)
 
     };
@@ -32,7 +44,7 @@ class Pixel extends Component {
             x: x,
             y: y,
             color: this.props.colors.bg,
-            colorVariable: 'bg'
+            color_variable: 'bg'
         };
         if (this.props.location === 'Template') {
             //    add pixel to store
@@ -41,6 +53,7 @@ class Pixel extends Component {
     }
 
     render() {
+        console.log('rendering')
         const { location, column, row, pen, colors } = this.props;
         if (location === 'Template') {
             return (
