@@ -13,12 +13,10 @@ function cardsReducer(state = { all: [],}, action) {
         case 'FETCH_BLOCKS':
             return {all: action.payload};
         case 'CREATE_BLOCK':
-            console.log(action.block);
             return {
                 all: [...state.all, action.block.data]
             };
         case 'DELETE_BLOCK':
-            console.log('delete button clicked');
             let block = state.all.find(b => b.id === action.id);
             let index = state.all.indexOf(block);
             return {
