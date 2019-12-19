@@ -40,7 +40,7 @@ class Pixel extends Component {
         let x = this.props.column + 1;
         let y = 25 - this.props.row;
         let pixel = {
-            id: x + ', ' + y,
+            // coord: x + ', ' + y,
             x: x,
             y: y,
             color: this.props.colors.bg,
