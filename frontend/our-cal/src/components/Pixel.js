@@ -53,7 +53,7 @@ class Pixel extends Component {
     }
 
     render() {
-        console.log('rendering')
+        // console.log('rendering')
         const { location, column, row, pen, colors } = this.props;
         if (location === 'Template') {
             return (
