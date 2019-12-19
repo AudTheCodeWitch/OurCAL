@@ -15,7 +15,7 @@ function cardsReducer(state = { all: [],}, action) {
         case 'CREATE_BLOCK':
             console.log(action.block);
             return {
-                all: [...state.all, action.block]
+                all: [...state.all, action.block.data]
             };
         case 'DELETE_BLOCK':
             console.log('delete button clicked');
