@@ -7,7 +7,7 @@ class CompleteBlock extends Component {
         const columns = new Array(25);
         const items = [];
         for (const [index] of columns.entries()) {
-            let p = <Pixel row={row} column={index} location={location}/>;
+            let p = <Pixel key={index} row={row} column={index} location={location}/>;
             items.push(p)
         }
         return items

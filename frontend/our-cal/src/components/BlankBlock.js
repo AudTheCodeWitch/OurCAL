@@ -7,7 +7,7 @@ class BlankBlock extends Component {
         const columns = new Array(25);
         const items = [];
         for (const [index] of columns.entries()) {
-            let p = <Pixel row={row} column={index} location='Template'/>;
+            let p = <Pixel key={index} row={row} column={index} location='Template'/>;
             items.push(p)
         }
         return items
