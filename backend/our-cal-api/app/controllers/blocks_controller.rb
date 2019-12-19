@@ -41,7 +41,7 @@ class BlocksController < ApplicationController
   private
 
   def block_params
-    params.require(:block).permit(:name, pixels_attributes: [:color, :color_variable, :x, :y, :id])
+    params.require(:block).permit(:name, pixels_attributes: [:color, :color_variable, :x, :y])
   end
 
   def user_params
