@@ -45,6 +45,22 @@ function blockTemplateReducer(state = {
             return {
                 blockTemplate: [...state.blockTemplate.slice(0, index), pixel, ...state.blockTemplate.slice(index + 1)]
             };
+        case 'CHANGE_COLOR':
+            let pixels = state.blockTemplate.map(p => (p.color_variable === (action.data.button)) ? {...p, color: action.data.color} : p);
+            return {
+                ...state,
+                blockTemplate: pixels
+            };
+        case 'CLEAR_BLOCK':
+            let bgColor = action.block.find(p => p.color_variable === 'bg');
+            bgColor = bgColor.color;
+            let submittedPixels = state.blockTemplate.map(p => {
+                return {...p, color: bgColor, color_variable: 'bg'};
+            });
+            return {
+                ...state,
+                blockTemplate: submittedPixels
+            };
         default:
             return state;
     }
