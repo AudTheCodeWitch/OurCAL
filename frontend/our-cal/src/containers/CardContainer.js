@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Card from "../components/Card";
 import { connect } from 'react-redux'
+import Card from "../components/Card";
 import { fetchBlocks } from "../actions/fetchBlocks";
 
 class CardContainer extends Component {
   createCards = blocks => {
-    return blocks.map((block, key) => {
+    return blocks.map((block) => {
       return <Card block={block} key={block.id} />;
     });
   };

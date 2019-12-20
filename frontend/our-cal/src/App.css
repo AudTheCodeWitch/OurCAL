@@ -114,7 +114,6 @@ h6 {
   background-color: #fff7f8;
   display: grid;
   width: 100%;
-  width: 100%;
   height: auto;
   grid-template-columns: 4fr;
   grid-template-rows: auto auto;
@@ -149,7 +148,7 @@ h6 {
 }
 
 .card ul {
-  text-align: left;
+  text-align: center;
   padding-left: 0;
   margin: 5px;
 }
@@ -161,5 +160,10 @@ h6 {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 0
+}
+
+.viewButton {
+  margin: 0 auto;
+  text-align: center;
 }
 
