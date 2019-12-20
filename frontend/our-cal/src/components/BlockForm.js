@@ -23,15 +23,29 @@ class BlockForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.postBlock(this.state, this.props.block);
-        this.props.clearBlock(this.props.block);
-        this.setState({
-            blockName: '',
-            difficulty: '',
-            username: '',
-            email: ''
-        });
-        console.log('submitted')
+        const duplicate = document.getElementById(this.state.blockName);
+        if(this.state.blockName === '') {
+            return alert('Please name your block')
+        } else if(duplicate) {
+            return alert('Block name must be unique')
+        }
+         else if(this.state.difficulty === '') {
+            return alert('Please select a difficulty rating');
+        } else if(this.state.username === '') {
+            return alert('Please enter your username');
+        }else if(this.state.email === '') {
+            return alert('Please enter your email');
+        } else {
+            this.props.postBlock(this.state, this.props.block);
+            this.props.clearBlock(this.props.block);
+            this.setState({
+                blockName: '',
+                difficulty: '',
+                username: '',
+                email: ''
+            });
+            alert('Success!')
+        }
     };
     render() {
         return (
