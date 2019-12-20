@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Pixel from "./Pixel";
 
-class BlankBlock extends Component {
-  createColumns = row => {
+const BlankBlock = () => {
+  const createColumns = row => {
     const columns = new Array(25);
     const items = [];
     for (const [index] of columns.entries()) {
@@ -14,22 +14,20 @@ class BlankBlock extends Component {
     return items;
   };
 
-  createBlock = () => {
+  const createBlock = () => {
     const rows = new Array(25);
     const items = [];
     for (const [index] of rows.entries()) {
       items.push(
         <div key={index} className="row" id={"row-" + (index + 1)}>
-          {this.createColumns(index)}
+          {createColumns(index)}
         </div>
       );
     }
     return items;
   };
 
-  render() {
-    return <div className="template block">{this.createBlock()}</div>;
-  }
-}
+  return <div className="template block">{createBlock()}</div>;
+};
 
 export default BlankBlock;
