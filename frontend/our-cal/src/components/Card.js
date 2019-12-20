@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import CompleteBlock from "./CompleteBlock";
 import { destroyBlock } from "../actions/destroyBlock";
 import DeleteButton from "./DeleteButton";
+import ShowButton from "./ShowButton";
+import {Link} from "react-router-dom";
 
 class Card extends Component {
   render() {
@@ -24,7 +26,9 @@ class Card extends Component {
         <ul>
           <li>{this.props.block.attributes.difficulty.rating}</li>
           <li>{this.props.block.attributes.user.username}</li>
+          <li><Link to={`/blocks/${this.props.block.id}`}><ShowButton/></Link></li>
         </ul>
+
       </div>
     );
   }
