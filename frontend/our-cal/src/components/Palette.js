@@ -52,8 +52,8 @@ class Palette extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return { colors: state.palette.colors }
+const mapStateToProps = state => {
+  return { colors: state.palette.colors };
 };
 
 export default connect(mapStateToProps, {changeColor})(Palette);

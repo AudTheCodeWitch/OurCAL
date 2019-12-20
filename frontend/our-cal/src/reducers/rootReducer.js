@@ -4,9 +4,9 @@ import blockTemplateReducer from "./blockTemplateReducer";
 import paletteReducer from "./paletteReducer";
 
 const rootReducer = combineReducers({
-    cards: cardsReducer,
-    blockTemplate: blockTemplateReducer,
-    palette: paletteReducer
+  cards: cardsReducer,
+  blockTemplate: blockTemplateReducer,
+  palette: paletteReducer
 });
 
 export default rootReducer;

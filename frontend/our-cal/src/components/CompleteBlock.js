@@ -4,14 +4,23 @@ import Pixel from "./Pixel";
 class CompleteBlock extends Component {
 
     createColumns = (row, location) => {
-        const columns = new Array(25);
-        const items = [];
-        for (const [index] of columns.entries()) {
-            let p = <Pixel key={index} row={row} column={index} location={location}/>;
-            items.push(p)
-        }
-        return items
-    };
+                                         const columns = new Array(25);
+                                         const items = [];
+                                         for (const [
+                                           index
+                                         ] of columns.entries()) {
+                                           let p = (
+                                             <Pixel
+                                               key={index}
+                                               row={row}
+                                               column={index}
+                                               location={location}
+                                             />
+                                           );
+                                           items.push(p);
+                                         }
+                                         return items;
+                                       };
 
     createBlock = (block) => {
         const rows = new Array(25);
@@ -32,7 +41,7 @@ class CompleteBlock extends Component {
                 box.className = `pixel ${p.color_variable}`;
             }
         };
-        let b = document.getElementById(this.props.block.name)
+        let b = document.getElementById(this.props.block.name);
         colorPixels(b, this.props.block.pixels)
     }
 
