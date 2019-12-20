@@ -5,10 +5,9 @@ const BlockHeader = () => {
     <div className="block-header">
       <h2>Create A Block</h2>
       <ol>
-        {/*TODO : Add CSS -> style="text-align: left"*/}
         <li>
-          Use the color pickers to set your colors. You may use up to 5 colors
-          in your block.
+          Use the color pickers to set your colors. You may use up to 6 colors
+          in your block, and you can change the colors at any time.
         </li>
         <li>Select a color radio button to set your active color.</li>
         <li>
