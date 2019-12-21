@@ -18,6 +18,7 @@ ul {
   display: grid;
   width: 100%;
   height: auto;
+  padding: 5px;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: auto auto auto;
   grid-template-areas: "head head" "block form" "color color";
@@ -115,25 +116,24 @@ h6 {
   display: grid;
   width: 100%;
   height: auto;
+  padding: 5px;
   grid-template-columns: 4fr;
   grid-template-rows: auto auto;
   grid-template-areas: "h2" "cards";
-
   grid-template: [header-left] 'h2' 1fr [header-right]
   [main-left] 'cards' auto [main-right]
 }
 
 .cards {
   grid-area: cards;
-  padding: 10px 0 0 10px;
 }
 
 .card {
   background-color: #eef0f2;
   display: block;
-  width: 23%;
+  width: 24%;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
   margin-bottom: 10px;
   height: auto;
   border-radius: 4px;
