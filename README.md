@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to OurCAL 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.2.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/AudTheCodeWitch/OurCAL/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -9,8 +9,11 @@
   </a>
 </p>
 
-> OurCAL is a crochet graphghan block generator. Users create their own 25x25 blocks and save them to the database. Users can view other patterns to incorporate into their own blankets. 
-
+>  OurCal is a community-generated Crochet-Along (CAL). Anyone can design a
+          block using the graphghan generator and submit it to our database. Users
+          can then view one another's blocks and implement their favorites in a
+          one-of-a-kind blanket!
+       
 ### ✨ [Demo](https://youtu.be/Q4ZJAEO2FJM)
 
 ## Usage
@@ -19,7 +22,11 @@ OurCAL runs on PostgreSQL. To start your PostgreSQL server, run:
 sudo service postgresql start
 ```
 
-`cd` into `./backend/our-cal-cap` and start the backend server by running:
+`cd` into `./backend/our-cal-cap` and seed the database:
+```shell script
+rails db:seed
+``` 
+ Start the backend server by running:
 ```shell script
 rails s
 ```
@@ -38,7 +45,17 @@ npx reload-b
 * Github: [@AudTheCodeWitch](https://github.com/AudTheCodeWitch)
 
 ## 🤝 Contributing
-
+Before we deploy OurCal, there are a few more odds and ends to tie up:
+* Add user sessions
+* Add the ability to edit one's submitted patterns
+* Add the ability to view patterns by designer
+          
+After initial deployment, we'll add some additional features:
+* View other's patterns in your color scheme
+* Arrange selected blocks on a blanket template
+* Generate written instructions for patterns
+* Add a print-friendly view of patterns with instructions
+          
 Contributions, issues and feature requests are welcome.<br />
 [Check out the contributors' Code of Conduct](./CODE_OF_CONDUCT.md).<br />
 
