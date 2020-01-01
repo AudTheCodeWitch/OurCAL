@@ -24,6 +24,7 @@ function paletteReducer(
         }
       };
     case "SET_PEN":
+      // Update pen selection in store
       return {
         ...state,
         pen: action.penNumber

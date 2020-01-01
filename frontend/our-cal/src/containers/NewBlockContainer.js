@@ -4,6 +4,8 @@ import BlankBlock from "../components/BlankBlock";
 import BlockForm from "../components/BlockForm";
 import PaletteForm from "../components/PaletteForm";
 
+// New block template - instructions, blank block, form, and color palette
+
 class NewBlockContainer extends Component {
   render() {
     return (

@@ -12,12 +12,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
+          {/*  Header component */}
           <Header />
         </header>
+        {/*  Set routes to home, about, and show pages */}
         <Route exact path="/" component={HomeContainer} />
         <Route exact path="/about" component={About} />
         <Route path="/blocks/:id" component={ShowContainer} />
         <footer>
+          {/* Footer component */}
           <Footer />
         </footer>
       </div>

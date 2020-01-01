@@ -1,5 +1,7 @@
 import React from "react";
 
+// Functional component - name of block
+
 const ShowHeader = props => {
   return (
     <div className="block-header">

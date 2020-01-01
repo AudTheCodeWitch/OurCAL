@@ -10,13 +10,17 @@ import rootReducer from "./reducers/rootReducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// Create store using rootReducer to combine all the reducers
+// Use applyMiddleware to enable thunk
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(
+  // Wrap entire app in provider to give all components access to the store
   <Provider store={store}>
+      {/* Wrap entire app in router to add routes */}
       <Router>
         <App />
       </Router>

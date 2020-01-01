@@ -1,5 +1,7 @@
 import React from "react";
 
+// Functional component - about page
+
 const About = () => {
   return (
     <div className="About">

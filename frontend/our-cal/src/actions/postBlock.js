@@ -1,9 +1,12 @@
 import { createBlock } from "./createBlock";
 
+// Posts block to db
+
 export function postBlock(details, block) {
   console.log(details);
 
   let blockData = {
+    // Format data to send to database
     block: {
       name: details.blockName,
       pixels_attributes: block
@@ -15,6 +18,7 @@ export function postBlock(details, block) {
     }
   };
   console.log(blockData);
+
   return dispatch =>
     fetch("http://localhost:3000/api/blocks", {
       method: "POST",
@@ -26,6 +30,7 @@ export function postBlock(details, block) {
     })
       .then(r => r.json())
       .then(block => {
+        // Take returned block data from db and use it to add block to store
         dispatch(createBlock(block));
       });
 }

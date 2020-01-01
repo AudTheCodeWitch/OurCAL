@@ -1,5 +1,7 @@
 import React from "react";
 
+// Functional component - instructions to create pattern
+
 const BlockHeader = () => {
   return (
     <div className="block-header">
