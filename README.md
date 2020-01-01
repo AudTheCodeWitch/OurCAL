@@ -22,7 +22,7 @@ OurCAL runs on PostgreSQL. To start your PostgreSQL server, run:
 sudo service postgresql start
 ```
 
-`cd` into `./backend/our-cal-cap` and seed the database:
+`cd` into `./backend/our-cal-api` and seed the database:
 ```shell script
 rails db:seed
 ``` 
