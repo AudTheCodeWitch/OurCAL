@@ -1,5 +1,7 @@
 import React from "react";
 
+// Functional component - block details
+
 const ShowDetails = props => {
   return (
     <div className="block-details">

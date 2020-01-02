@@ -11,6 +11,7 @@ class Pixel extends Component {
       let pixel = event.target;
       let color;
 
+      // Toggle between background and pen colors
       if (pixel.className === `pixel ${pen}`) {
         pixel.className = `pixel bg`;
         color = this.props.colors.bg;
@@ -33,7 +34,7 @@ class Pixel extends Component {
       color_variable: "bg"
     };
     if (this.props.location === "Template") {
-      //    add pixel to store
+      //  Add pixel to store
       this.props.addPixel(pixel);
     }
   }

@@ -5,12 +5,14 @@ import { fetchBlocks } from "../actions/fetchBlocks";
 
 class CardContainer extends Component {
   createCards = blocks => {
+    // Create a card for each block from store
     return blocks.map(block => {
       return <Card block={block} key={block.id} />;
     });
   };
 
   componentDidMount() {
+    // Fetch blocks from db once component loads to DOM
     this.props.fetchBlocks();
   }
 
@@ -25,6 +27,7 @@ class CardContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  // Get cards from store
   return { cards: state.cards.all };
 };
 

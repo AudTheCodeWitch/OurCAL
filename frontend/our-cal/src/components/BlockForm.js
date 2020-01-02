@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 import { postBlock } from "../actions/postBlock";
 import { clearBlock } from "../actions/clearBlock";
 
+// Class component - form for block details
+
 class BlockForm extends Component {
+  // Set local state
   constructor() {
     super();
     this.state = {
@@ -15,14 +18,17 @@ class BlockForm extends Component {
   }
 
   handleChange = event => {
+    // Update local state on change
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
   handleSubmit = event => {
+    // Submit form - update store
     event.preventDefault();
     const duplicate = document.getElementById(this.state.blockName);
+    // Alerts to prevent incomplete data
     if (this.state.blockName === "") {
       return alert("Please name your block");
     } else if (duplicate) {
@@ -34,8 +40,11 @@ class BlockForm extends Component {
     } else if (this.state.email === "") {
       return alert("Please enter your email");
     } else {
+      // Add block to database using postBlock(blockDetails, blockData) action
       this.props.postBlock(this.state, this.props.block);
+      // Reset the block template with clearBlock(blockData) action
       this.props.clearBlock(this.props.block);
+      // Reset the local state
       this.setState({
         blockName: "",
         difficulty: "",
@@ -115,6 +124,8 @@ class BlockForm extends Component {
     );
   }
 }
+
+// Get block data from store
 const mapStateToProps = state => {
   return { block: state.blockTemplate.blockTemplate };
 };

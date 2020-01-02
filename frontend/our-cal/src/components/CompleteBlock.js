@@ -1,9 +1,11 @@
 import React, {Component} from "react";
 import Pixel from "./Pixel";
 
+// Class component - complete block with colored pixels
+
 class CompleteBlock extends Component {
 
-    createColumns = (row, location) => {
+  createColumns = (row, location) => {
                                          const columns = new Array(25);
                                          const items = [];
                                          for (const [
@@ -34,6 +36,7 @@ class CompleteBlock extends Component {
     };
 
     componentDidMount() {
+        // Set bg color for pixels based on location
         let colorPixels = (blank, pixels) => {
             for (let p of pixels) {
                 let box = document.getElementById(`${blank.id}-${p.x},${p.y}`);

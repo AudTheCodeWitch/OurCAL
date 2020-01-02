@@ -36,6 +36,7 @@ function blockTemplateReducer(
         blockTemplate: pixels
       };
     case "CLEAR_BLOCK":
+      // Resets all pixels in the block template to background colors
       let bgColor = action.block.find(p => p.color_variable === "bg");
       bgColor = bgColor.color;
       let submittedPixels = state.blockTemplate.map(p => {
