@@ -1,5 +1,21 @@
 {
-  "name": "OurCAL",
+  "name": "our-cal-api",
   "version": "1.0.0",
-  "dependencies": {}
+  "description": "API for OurCAL Community Graphghan",
+  "main": "index.js",
+  "repository": "https://github.com/AudTheCodeWitch/OurCAL",
+  "author": "Audrea Cook",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd frontend/our-cal && yarn install && yarn build && cd ",
+    "deploy": "cp -a frontend/our-cal/build/. backend/our-cal-api/public",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+  },
+  "engines": {
+    "yarn": "1.22.4",
+    "npm": "6.14.4",
+    "node": "10.17.0"
+  }
 }
+
+
