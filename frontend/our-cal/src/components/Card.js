@@ -16,7 +16,7 @@ class Card extends Component {
         id={this.props.block.id + "-" + this.props.block.attributes.name}
       >
         <DeleteButton
-          {/* Destroy block in db and remove from store */}
+          /* Destroy block in db and remove from store */
           destroyBlock={this.props.destroyBlock}
           id={this.props.block.id}
         />
