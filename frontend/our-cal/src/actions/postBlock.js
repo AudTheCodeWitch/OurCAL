@@ -20,7 +20,8 @@ export function postBlock(details, block) {
   console.log(blockData);
 
   return dispatch =>
-    fetch("http://localhost:3000/api/blocks", {
+    // fetch("http://localhost:3000/api/blocks", {
+    fetch("/blocks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
