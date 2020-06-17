@@ -1,5 +1,5 @@
 {
-  "name": "our-cal-api",
+  "name": "our-cal",
   "version": "1.0.0",
   "description": "API for OurCAL Community Graphghan",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "cd client && yarn install && yarn build && cd ..",
-    "deploy": "cp -a client/build/. /public",
+    "deploy": "cp -a client/build/. public/",
     "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
   },
   "engines": {
