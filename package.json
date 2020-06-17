@@ -7,8 +7,8 @@
   "author": "Audrea Cook",
   "license": "MIT",
   "scripts": {
-    "build": "cd client && yarn install && yarn build && cd ",
-    "deploy": "cp -a client/build/. OurCAL/public",
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. /public",
     "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
   },
   "engines": {
