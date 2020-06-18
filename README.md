@@ -21,7 +21,7 @@
 ## Usage
 OurCAL runs on PostgreSQL. To start your PostgreSQL server, run: 
 ```sh
-sudo service postgresql start
+$ sudo service postgresql start
 ```
 
 Create the database, run migrations, and seed it:
