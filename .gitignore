@@ -23,6 +23,3 @@
 
 # Idea folder
 .idea/
-
-# Secrets folder
-config/secrets/*

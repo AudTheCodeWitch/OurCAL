@@ -45,5 +45,3 @@ gem 'fast_jsonapi'
 gem 'rubocop'
 
 gem 'pry'
-
-gem 'google-cloud-storage', '~> 1.8', require: false
