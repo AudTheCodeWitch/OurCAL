@@ -5,8 +5,8 @@ import { fetchBlocks } from "../actions/fetchBlocks";
 
 class CardContainer extends Component {
   createCards = blocks => {
-    // Create a card for each block from store
-    return blocks.map(block => {
+    // Create a card for each block from store in reverse order (newest first)
+    return blocks.slice(0).reverse().map(block => {
       return <Card block={block} key={block.id} />;
     });
   };
