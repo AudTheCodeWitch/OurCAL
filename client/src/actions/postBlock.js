@@ -21,7 +21,7 @@ export function postBlock(details, block) {
 
   return dispatch =>
     // fetch("http://localhost:3000/api/blocks", {
-    fetch("/blocks", {
+    fetch("/api/blocks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
