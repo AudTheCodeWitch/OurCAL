@@ -14,7 +14,9 @@
           can then view one another's blocks and implement their favorites in a
           one-of-a-kind blanket!
        
-### ✨ [Demo](https://youtu.be/Q4ZJAEO2FJM)
+### ✨ [Current Release](https://our-cal.herokuapp.com/)
+
+### ✨ [Demo Video](https://youtu.be/Q4ZJAEO2FJM)
 
 ## Usage
 OurCAL runs on PostgreSQL. To start your PostgreSQL server, run: 
@@ -22,18 +24,20 @@ OurCAL runs on PostgreSQL. To start your PostgreSQL server, run:
 sudo service postgresql start
 ```
 
-`cd` into `./backend/our-cal-api` and seed the database:
+Create the database, run migrations, and seed it:
 ```shell script
-rails db:seed
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
 ``` 
  Start the backend server by running:
 ```shell script
-rails s
+$ rails s -p 3001
 ```
 
-`cd` into `./frontend` and start the frontend server by running:
+`cd` into `./client` and start the frontend server by running:
 ```shell script
-npx reload-b
+$ yarn start
 ```
 
 
@@ -43,14 +47,13 @@ npx reload-b
 
 * Twitter: [@AudTheCodeWitch](https://twitter.com/AudTheCodeWitch)
 * Github: [@AudTheCodeWitch](https://github.com/AudTheCodeWitch)
+* LinkedIn [Audrea Cook](https://www.linkedin.com/in/audreacook/)
 
 ## 🤝 Contributing
-Before we deploy OurCal, there are a few more odds and ends to tie up:
+In the future, we would like to add a few features:
 * Add user sessions
 * Add the ability to edit one's submitted patterns
 * Add the ability to view patterns by designer
-          
-After initial deployment, we'll add some additional features:
 * View other's patterns in your color scheme
 * Arrange selected blocks on a blanket template
 * Generate written instructions for patterns
@@ -61,11 +64,11 @@ Contributions, issues and feature requests are welcome.<br />
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
+Give a ⭐️ if you enjoyed OurCAL!
 
 ## 📝 License
 
-Copyright © 2019 [Audrea Cook](https://github.com/AudTheCodeWitch).<br />
+Copyright © 2020 [Audrea Cook](https://github.com/AudTheCodeWitch).<br />
 This project is [MIT](https://github.com/AudTheCodeWitch/OurCAL/blob/master/LICENSE) licensed.
 
 ---
