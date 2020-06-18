@@ -58,6 +58,7 @@ In the future, we would like to add a few features:
 * Arrange selected blocks on a blanket template
 * Generate written instructions for patterns
 * Add a print-friendly view of patterns with instructions
+* Redesign layout from a mobile-first perspective
           
 Contributions, issues and feature requests are welcome.<br />
 [Check out the contributors' Code of Conduct](./CODE_OF_CONDUCT.md).<br />
