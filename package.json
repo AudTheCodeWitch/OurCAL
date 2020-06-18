@@ -1,7 +1,7 @@
 {
   "name": "our-cal",
   "version": "1.0.0",
-  "description": "API for OurCAL Community Graphghan",
+  "description": "OurCAL Community Graphghan",
   "main": "index.js",
   "repository": "https://github.com/AudTheCodeWitch/OurCAL",
   "author": "Audrea Cook",
