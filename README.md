@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to OurCAL 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.2.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.3.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/AudTheCodeWitch/OurCAL/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -14,7 +14,7 @@
           can then view one another's blocks and implement their favorites in a
           one-of-a-kind blanket!
        
-### ✨ [Current Release](https://our-cal.herokuapp.com/)
+### ✨ [Heroku Demo](https://our-cal.herokuapp.com/)
 
 ### ✨ [Demo Video](https://youtu.be/Q4ZJAEO2FJM)
 
