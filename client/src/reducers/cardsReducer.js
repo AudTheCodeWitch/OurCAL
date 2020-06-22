@@ -5,6 +5,7 @@ function cardsReducer(state = { all: [] }, action) {
       return { all: action.payload };
     case "CREATE_BLOCK":
       // Add new block to store
+      console.log(action.block);
       return {
         all: [...state.all, action.block.data]
       };
