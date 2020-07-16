@@ -11,15 +11,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
-          {/*  Header component */}
-          <Header />
-        </header>
-        {/*  Set routes to home, about, and show pages */}
-        <Route exact path="/" component={HomeContainer} />
-        <Route exact path="/about" component={About} />
-        <Route path="/blocks/:id" component={ShowContainer} />
-        <footer>
+        <div className='content'>
+          <header>
+            {/*  Header component */}
+            <Header />
+          </header>
+          {/*  Set routes to home, about, and show pages */}
+          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/about" component={About} />
+          <Route path="/blocks/:id" component={ShowContainer} />
+        </div>
+        <footer className='footer'>
           {/* Footer component */}
           <Footer />
         </footer>

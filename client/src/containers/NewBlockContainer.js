@@ -10,9 +10,13 @@ class NewBlockContainer extends Component {
   render() {
     return (
       <div className="block-container">
+        {/*Instructions*/}
         <BlockHeader />
+        {/*25x25 grid*/}
         <BlankBlock />
+        {/*Block info && store updates*/}
         <BlockForm />
+        {/*Pen color selectors*/}
         <PaletteForm />
       </div>
     );

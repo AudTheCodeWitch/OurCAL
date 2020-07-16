@@ -15,6 +15,7 @@ class Pixel extends Component {
       if (pixel.className === `pixel ${pen}`) {
         pixel.className = `pixel bg`;
         color = this.props.colors.bg;
+        pen = 'bg';
       } else {
         pixel.className = `pixel ${pen}`;
         color = this.props.colors[pen];

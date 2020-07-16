@@ -25,8 +25,6 @@ class BlocksController < ApplicationController
     else
       render json: { error: block.errors.full_messages }
     end
-
-
   end
 
   def destroy

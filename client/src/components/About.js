@@ -15,16 +15,16 @@ const About = () => {
       <h2>Coming Soon...</h2>
       <p>
         We hope to add a few new features in our next release:
-        <ul>
-          <li>Add user accounts/sessions</li>
-          <li>Add the ability to edit one's submitted patterns</li>
-          <li>Add the ability to view patterns by designer</li>
-          <li>View other patterns in your color scheme</li>
-          <li>Arrange selected blocks on a blanket template</li>
-          <li>Generate written instructions for patterns</li>
-          <li>Add a print-friendly view of patterns with instructions</li>
-        </ul>
       </p>
+      <ul>
+        <li>Add user accounts/sessions</li>
+        <li>Add the ability to edit one's submitted patterns</li>
+        <li>Add the ability to view patterns by designer</li>
+        <li>View other patterns in your color scheme</li>
+        <li>Arrange selected blocks on a blanket template</li>
+        <li>Generate written instructions for patterns</li>
+        <li>Add a print-friendly view of patterns with instructions</li>
+      </ul>
       <p>
         Have an idea?{" "}
         <a href={"https://github.com/AudTheCodeWitch/OurCAL/issues/new"}>

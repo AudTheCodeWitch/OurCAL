@@ -6,23 +6,23 @@ import Pixel from "./Pixel";
 class CompleteBlock extends Component {
 
   createColumns = (row, location) => {
-                                         const columns = new Array(25);
-                                         const items = [];
-                                         for (const [
-                                           index
-                                         ] of columns.entries()) {
-                                           let p = (
-                                             <Pixel
-                                               key={index}
-                                               row={row}
-                                               column={index}
-                                               location={location}
-                                             />
-                                           );
-                                           items.push(p);
-                                         }
-                                         return items;
-                                       };
+     const columns = new Array(25);
+     const items = [];
+     for (const [
+       index
+     ] of columns.entries()) {
+       let p = (
+         <Pixel
+           key={index}
+           row={row}
+           column={index}
+           location={location}
+         />
+       );
+       items.push(p);
+     }
+     return items;
+   };
 
     createBlock = (block) => {
         const rows = new Array(25);
