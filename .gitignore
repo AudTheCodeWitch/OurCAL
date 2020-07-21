@@ -23,3 +23,5 @@
 
 # Idea folder
 .idea/
+
+/config/master.key
