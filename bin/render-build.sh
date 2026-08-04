@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# exit on error
+set -o errexit
+
+# Install Ruby gems
+bundle install
+
+# Build React client and copy assets into Rails public directory
+cd client
+yarn install
+yarn build
+cp -r build/* ../public/
+cd ..
+
+# Run database migrations
+bundle exec rake db:migrate
