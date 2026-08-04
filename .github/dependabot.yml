@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Node.js / Yarn dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Ruby / Bundler dependencies
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
