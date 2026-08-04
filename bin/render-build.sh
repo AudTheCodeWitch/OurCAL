@@ -12,5 +12,6 @@ yarn build
 cp -r build/* ../public/
 cd ..
 
-# Run database migrations
+# Run database migrations and seed data
 bundle exec rake db:migrate
+bundle exec rake db:seed
